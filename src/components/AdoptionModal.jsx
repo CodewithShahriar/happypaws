@@ -98,11 +98,11 @@ export default function AdoptionModal({ isOpen, onClose, initialPet, onComplete 
               {/* Pet Profile Header Card */}
               {selectedPet && (
                 <div className="p-4 bg-[#FAF7F2] rounded-2xl flex flex-col sm:flex-row items-center gap-4 border border-gray-100">
-                  <div className="w-24 h-24 rounded-2xl overflow-hidden bg-white p-1 flex-shrink-0 shadow-sm">
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden bg-white p-1 flex-shrink-0 shadow-sm flex items-center justify-center">
                     <img
                       src={selectedPet.image}
                       alt={selectedPet.name}
-                      className="w-full h-full object-cover rounded-xl"
+                      className="w-full h-full object-contain object-bottom rounded-xl"
                     />
                   </div>
                   <div className="flex-1 text-center sm:text-left">

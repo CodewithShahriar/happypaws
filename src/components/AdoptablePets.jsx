@@ -28,11 +28,11 @@ export default function AdoptablePets({ onSelectPet }) {
             >
               <div>
                 {/* Pet Image with soft pastel background */}
-                <div className={`relative rounded-2xl ${pet.colorBg || 'bg-brand-50'} p-3 mb-4 aspect-square flex items-center justify-center overflow-hidden`}>
+                <div className={`relative rounded-2xl ${pet.colorBg || 'bg-brand-50'} p-2.5 mb-4 aspect-square flex items-center justify-center overflow-hidden`}>
                   <img
                     src={pet.image}
                     alt={pet.name}
-                    className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain object-bottom rounded-xl group-hover:scale-105 transition-transform duration-500 drop-shadow-sm"
                   />
 
                   {/* Species tag */}
