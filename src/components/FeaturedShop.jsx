@@ -41,12 +41,12 @@ export default function FeaturedShop({ onAddToCart }) {
               className="bg-white rounded-3xl p-6 border border-gray-100 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                {/* Product Transparent Image Container */}
-                <div className="relative rounded-2xl bg-[#FAF7F2]/60 p-6 mb-5 flex items-center justify-center overflow-hidden aspect-[4/3] sm:h-56">
+                {/* Product Transparent Image Container (Much Bigger & Prominent) */}
+                <div className="relative rounded-2xl bg-[#FAF7F2]/60 p-3 sm:p-4 mb-5 flex items-center justify-center overflow-hidden h-72 sm:h-80 w-full">
                   <img
                     src={prod.image}
                     alt={prod.name}
-                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                    className="h-full w-auto max-h-[250px] sm:max-h-[275px] max-w-[85%] sm:max-w-[88%] object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-lg"
                   />
                 </div>
 
