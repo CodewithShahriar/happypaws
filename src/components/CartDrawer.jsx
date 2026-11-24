@@ -100,7 +100,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
                             {item.name}
                           </h4>
                           <p className="text-xs text-brand-600 font-bold mb-2">
-                            ₱{item.price.toFixed(2)}
+                            ${item.price.toFixed(2)}
                           </p>
 
                           <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
                         </div>
 
                         <div className="text-right font-bold text-sm text-gray-900">
-                          ₱{(item.price * item.quantity).toFixed(2)}
+                          ${(item.price * item.quantity).toFixed(2)}
                         </div>
                       </div>
                     ))}
@@ -229,7 +229,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Total Paid:</span>
-                    <span className="font-extrabold text-brand-600">₱{total.toFixed(2)}</span>
+                    <span className="font-extrabold text-brand-600">${total.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Estimated Delivery:</span>
@@ -253,15 +253,15 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
               <div className="space-y-1.5 text-xs text-gray-600">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="font-bold text-gray-900">₱{subtotal.toFixed(2)}</span>
+                  <span className="font-bold text-gray-900">${subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Metro Manila Delivery</span>
-                  <span>{deliveryFee === 0 ? <strong className="text-emerald-600">FREE</strong> : `₱${deliveryFee.toFixed(2)}`}</span>
+                  <span>Standard Delivery</span>
+                  <span>{deliveryFee === 0 ? <strong className="text-emerald-600">FREE</strong> : `$${deliveryFee.toFixed(2)}`}</span>
                 </div>
                 <div className="flex justify-between text-base font-extrabold text-gray-900 pt-2 border-t border-gray-200">
                   <span>Total</span>
-                  <span className="text-brand-600">₱{total.toFixed(2)}</span>
+                  <span className="text-brand-600">${total.toFixed(2)}</span>
                 </div>
               </div>
 
@@ -287,7 +287,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
                     form="checkout-form"
                     className="w-2/3 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs sm:text-sm rounded-full shadow-sm"
                   >
-                    Confirm & Pay ₱{total.toFixed(2)}
+                    Confirm & Pay ${total.toFixed(2)}
                   </button>
                 </div>
               )}

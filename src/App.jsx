@@ -74,7 +74,7 @@ export default function App() {
 
     setToast({
       title: "Added to Bag!",
-      message: `${product.name} (₱${product.price.toFixed(2)}) is now in your care bag.`
+      message: `${product.name} ($${product.price.toFixed(2)}) is now in your care bag.`
     });
   };
 

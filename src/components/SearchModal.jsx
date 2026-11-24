@@ -129,7 +129,7 @@ export default function SearchModal({ isOpen, onClose, onSelectPet, onAddToCart 
                           <img src={prod.image} alt={prod.name} className="w-10 h-10 object-contain" />
                           <div className="min-w-0">
                             <p className="text-xs font-bold text-gray-900 truncate">{prod.name}</p>
-                            <p className="text-xs font-extrabold text-brand-600">₱{prod.price.toFixed(2)}</p>
+                            <p className="text-xs font-extrabold text-brand-600">${prod.price.toFixed(2)}</p>
                           </div>
                         </div>
                         <button

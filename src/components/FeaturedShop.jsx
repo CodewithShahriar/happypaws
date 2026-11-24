@@ -62,7 +62,7 @@ export default function FeaturedShop({ onAddToCart }) {
               {/* Price & Action Button */}
               <div className="flex items-center justify-between pt-4 border-t border-gray-50">
                 <div className="font-extrabold text-base sm:text-lg text-gray-900">
-                  {prod.currency} {prod.price.toFixed(2)}
+                  {prod.currency}{prod.price.toFixed(2)}
                 </div>
 
                 <button
