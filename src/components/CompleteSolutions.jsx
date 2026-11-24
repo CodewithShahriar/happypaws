@@ -71,7 +71,7 @@ export default function CompleteSolutions({ onOpenBooking }) {
             </div>
 
             {/* Middle Block: Clinical Metrics Card (Completely Fills the Gap) */}
-            <div className="bg-white rounded-3xl p-4 sm:p-5 border border-gray-100 shadow-soft grid grid-cols-3 gap-2 sm:gap-3 text-center">
+            <div className="bg-white rounded-3xl p-4 sm:p-5 border-2 border-gray-200 hover:border-brand-300 shadow-soft transition-all grid grid-cols-3 gap-2 sm:gap-3 text-center">
               <div className="p-2">
                 <div className="flex items-center justify-center text-brand-600 mb-1">
                   <HeartPulse className="w-4 h-4" />
@@ -98,7 +98,7 @@ export default function CompleteSolutions({ onOpenBooking }) {
             </div>
 
             {/* Bottom Block: Male Vet with Golden Retriever Card + Doctor Bio */}
-            <div className="bg-white rounded-3xl p-4 sm:p-5 border border-gray-100 shadow-soft flex flex-col justify-between">
+            <div className="bg-white rounded-3xl p-4 sm:p-5 border-2 border-gray-200 hover:border-brand-300 shadow-soft hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
               
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full bg-brand-50 mb-3 sm:mb-4">
                 <img
@@ -131,7 +131,7 @@ export default function CompleteSolutions({ onOpenBooking }) {
           <div className="lg:col-span-7 flex flex-col justify-between gap-5">
             
             {/* Top Block: Blue Scrubs Vet Examining Cat Image Card */}
-            <div className="bg-white rounded-3xl p-3 sm:p-4 border border-gray-100 shadow-soft">
+            <div className="bg-white rounded-3xl p-3 sm:p-4 border-2 border-gray-200 hover:border-brand-300 shadow-soft transition-all duration-300">
               <div className="relative rounded-2xl overflow-hidden aspect-[16/9.5] w-full bg-brand-50">
                 <img
                   src="/images/vet_examining_cat_blue.jpg"
@@ -141,7 +141,7 @@ export default function CompleteSolutions({ onOpenBooking }) {
               </div>
             </div>
 
-            {/* Bottom Block: 5 Interactive Services List */}
+            {/* Bottom Block: 5 Interactive Services List with Prominent 2px Borders & Hover */}
             <div className="space-y-3 flex-1 flex flex-col justify-between">
               {SERVICES.map((srv) => {
                 const isActive = srv.id === activeServiceId;
@@ -149,18 +149,20 @@ export default function CompleteSolutions({ onOpenBooking }) {
                   <div
                     key={srv.id}
                     onClick={() => setActiveServiceId(isActive ? '' : srv.id)}
-                    className={`rounded-2xl transition-all duration-200 border cursor-pointer ${
+                    className={`rounded-2xl transition-all duration-300 border-2 cursor-pointer ${
                       isActive
-                        ? 'bg-white border-brand-200 shadow-soft p-5'
-                        : 'bg-white/80 hover:bg-white border-gray-100 hover:border-gray-200 p-4 sm:p-5'
+                        ? 'bg-white border-brand-500 shadow-md p-5'
+                        : 'bg-white border-gray-200 hover:border-brand-500 hover:shadow-soft hover:-translate-y-0.5 p-4 sm:p-5'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-3">
-                        <div className={`w-2 h-2 rounded-full transition-colors ${
-                          isActive ? 'bg-brand-600' : 'bg-gray-300'
+                        <div className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                          isActive ? 'bg-brand-600 ring-4 ring-brand-100' : 'bg-gray-300'
                         }`} />
-                        <h3 className="text-sm sm:text-base font-bold text-gray-900">
+                        <h3 className={`text-sm sm:text-base font-bold transition-colors ${
+                          isActive ? 'text-brand-600' : 'text-gray-900 group-hover:text-brand-600'
+                        }`}>
                           {srv.title}
                         </h3>
                       </div>

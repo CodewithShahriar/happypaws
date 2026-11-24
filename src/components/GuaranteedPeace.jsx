@@ -73,13 +73,13 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 xl:p-6 border border-gray-100 shadow-soft hover:shadow-card transition-all flex flex-col justify-between"
+                  className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 xl:p-6 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div>
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-3 sm:mb-4">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300 shadow-xs">
                       <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-1.5 sm:mb-2">
+                    <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-brand-600 transition-colors mb-1.5 sm:mb-2">
                       {item.title}
                     </h3>
                     <p className="text-[11px] sm:text-xs text-gray-500 leading-relaxed">
