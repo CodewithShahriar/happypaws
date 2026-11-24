@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Play, ShieldPlus, Sparkles, Star, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Play, ShieldPlus, Star, CheckCircle2 } from 'lucide-react';
 
 export default function Hero({ onOpenAdopt, onOpenStory }) {
   return (
@@ -64,15 +64,9 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
 
           {/* Left Text Content: Rich, perfectly balanced vertical pillar filling the canvas - elevated upwards */}
           <div className="relative z-10 lg:max-w-[640px] xl:max-w-[740px] 2xl:max-w-[800px] lg:-translate-y-6 xl:-translate-y-8 pt-2 lg:pt-0 pb-4">
-            
-            {/* 1. Eyebrow Badge (Fills the upper area) */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50/90 border border-brand-200/80 text-brand-700 text-xs font-bold tracking-wide uppercase mb-3.5 sm:mb-4 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-brand-600" />
-              <span>Certified Pet Adoption & Care Network</span>
-            </div>
 
             {/* 2. Clean, Concise 3-Word Cohesive Headline Statement */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] 2xl:text-[60px] font-extrabold text-[#111827] tracking-tight mb-5 sm:mb-6 flex flex-col gap-1.5 sm:gap-2 xl:gap-2.5">
+            <h1 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] 2xl:text-[60px] font-extrabold text-[#111827] tracking-tight mb-5 sm:mb-6 flex flex-col gap-1 sm:gap-1.5 xl:gap-2">
               <span className="block whitespace-nowrap leading-[1.2]">Every Rescued Pet</span>
               <span className="block whitespace-nowrap leading-[1.2]">Deserves Loving Care</span>
               <span className="block whitespace-nowrap leading-[1.2]">And Lifelong Happiness.</span>
