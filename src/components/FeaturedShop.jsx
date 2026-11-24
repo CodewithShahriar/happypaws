@@ -5,7 +5,7 @@ import { PRODUCTS } from '../data/mockData';
 export default function FeaturedShop({ onAddToCart }) {
   return (
     <section id="shop" className="py-16 lg:py-20 bg-[#FAF7F2] relative">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">

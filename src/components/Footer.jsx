@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 export default function Footer({ onOpenAdopt, onOpenBooking }) {
   return (
     <footer className="pt-10 pb-12 bg-[#FAF7F2] relative">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
         {/* Puppy & Kitten Banner Image sitting directly above dark container */}
         <div className="relative max-w-2xl mx-auto -mb-6 z-10">
