@@ -33,7 +33,7 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           
           {/* ================= LEFT: Title & CTA ================= */}
-          <div className="lg:col-span-4 xl:col-span-3.5 space-y-5 text-left">
+          <div className="lg:col-span-3.5 space-y-5 text-left">
             <div className="inline-flex items-center gap-2 text-brand-600 text-xs font-bold tracking-wide uppercase">
               <span className="w-2 h-2 rounded-full bg-brand-600"></span>
               Our Promise To You
@@ -55,19 +55,19 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
             </div>
           </div>
 
-          {/* ================= CENTER: Transparent Doctor with Beagle ================= */}
-          <div className="lg:col-span-3 xl:col-span-3.5 flex items-center justify-center">
-            <div className="relative w-full max-w-[320px] sm:max-w-[360px]">
+          {/* ================= CENTER: Transparent Doctor with Beagle (Enlarged) ================= */}
+          <div className="lg:col-span-4 flex items-center justify-center">
+            <div className="relative w-full max-w-[380px] sm:max-w-[420px] xl:max-w-[450px]">
               <img
                 src="/images/vet_beagle_transparent.png"
                 alt="Veterinarian kneeling with friendly Beagle dog"
-                className="w-full h-auto object-contain drop-shadow-sm select-none pointer-events-none"
+                className="w-full h-auto object-contain drop-shadow-md select-none pointer-events-none"
               />
             </div>
           </div>
 
           {/* ================= RIGHT: 4 Cards (2x2 Grid) ================= */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div className="lg:col-span-4.5 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {PROMISES.map((item, idx) => {
               const Icon = item.icon;
               return (
