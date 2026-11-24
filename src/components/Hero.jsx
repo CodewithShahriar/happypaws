@@ -63,7 +63,7 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
           </div>
 
           {/* Left Text Content: Rich, perfectly balanced vertical pillar filling the canvas */}
-          <div className="relative z-10 lg:max-w-[560px] xl:max-w-[640px] 2xl:max-w-[700px] pt-2 lg:pt-0 pb-4 lg:pb-8">
+          <div className="relative z-10 lg:max-w-[640px] xl:max-w-[740px] 2xl:max-w-[800px] pt-2 lg:pt-0 pb-4 lg:pb-8">
             
             {/* 1. Eyebrow Badge (Fills the upper area) */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50/90 border border-brand-200/80 text-brand-700 text-xs font-bold tracking-wide uppercase mb-3.5 sm:mb-4 shadow-xs">
@@ -71,11 +71,11 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
               <span>Certified Pet Adoption & Care Network</span>
             </div>
 
-            {/* 2. Bold Clean 3-Line Headline (Solid Black, Never Breaks into 5 Lines) */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[52px] xl:text-[60px] 2xl:text-[66px] font-extrabold text-[#111827] leading-[1.12] tracking-tight mb-4 sm:mb-5">
-              <span className="block whitespace-nowrap">Loving Homes.</span>
-              <span className="block whitespace-nowrap">Healthy Pets.</span>
-              <span className="block whitespace-nowrap">Happy Lives.</span>
+            {/* 2. Cohesive, Meaningful Headline Statement (Solid Black, Reaches Right Red Mark) */}
+            <h1 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] 2xl:text-[52px] font-extrabold text-[#111827] leading-[1.16] tracking-tight mb-4 sm:mb-5">
+              <span className="block whitespace-nowrap">Every Rescue Pet Deserves A Safe,</span>
+              <span className="block whitespace-nowrap">Loving Home, Quality Healthcare,</span>
+              <span className="block whitespace-nowrap">And A Lifetime Of Happiness.</span>
             </h1>
 
             {/* 3. Rich Subtitle */}
