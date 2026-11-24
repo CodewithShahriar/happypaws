@@ -4,7 +4,7 @@ import { ArrowUpRight, Send } from 'lucide-react';
 export default function JourneyCallout({ onOpenAdopt }) {
   return (
     <section className="py-12 lg:py-16 bg-[#FAF7F2] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Outer relative wrapper so the bottom-left purple circle can protrude OUTSIDE the card */}
         <div className="relative">

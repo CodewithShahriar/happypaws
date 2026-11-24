@@ -40,8 +40,8 @@ const PARTNERS = [
 
 export default function BrandPartners() {
   return (
-    <section className="pt-2 pb-5 sm:pt-3 sm:pb-6 bg-[#FAF7F2] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="pt-2 pb-6 sm:pt-3 sm:pb-8 bg-[#FAF7F2] relative overflow-hidden">
+      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Single Row 7-Brand Grid - Fits all 7 in 1 line */}
         <div className="grid grid-cols-7 gap-2 sm:gap-3 md:gap-4 lg:gap-5 items-center justify-between">

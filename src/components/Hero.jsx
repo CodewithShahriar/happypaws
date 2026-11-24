@@ -3,15 +3,15 @@ import { ArrowRight, Play, ShieldPlus } from 'lucide-react';
 
 export default function Hero({ onOpenAdopt, onOpenStory }) {
   return (
-    <section id="hero" className="relative pt-6 pb-2 lg:pt-8 lg:pb-4 bg-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section id="hero" className="relative pt-4 pb-6 lg:pt-10 lg:pb-12 xl:pt-14 xl:pb-16 bg-[#FAF7F2] min-h-[calc(100vh-140px)] flex items-center">
+      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
         
         {/* Stage Container with natural ample height so the image is NEVER clipped at top */}
-        <div className="relative w-full min-h-[480px] lg:min-h-[590px] xl:min-h-[630px] flex flex-col justify-start">
+        <div className="relative w-full min-h-[520px] lg:min-h-[620px] xl:min-h-[680px] 2xl:min-h-[720px] flex flex-col justify-center">
           
           {/* Background Illustration Stage: Positioned from top-2 so Corgi's ears & Stories badge have plenty of room */}
           <div className="lg:absolute lg:top-2 lg:right-0 pointer-events-none w-full flex justify-end">
-            <div className="relative w-full max-w-[960px] xl:max-w-[1020px] ml-auto">
+            <div className="relative w-full max-w-[960px] xl:max-w-[1100px] 2xl:max-w-[1180px] ml-auto">
               <img
                 src="/images/hero_transparent.png"
                 alt="Loving Homes, Healthy Pets, Happy Lives - Corgi dog and two cats resting on pet bed"
@@ -62,15 +62,15 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
             </div>
           </div>
 
-          {/* Left Text Content: Slightly larger text content as requested */}
-          <div className="relative z-10 lg:max-w-[460px] xl:max-w-[500px] pt-3 lg:pt-6 lg:ml-12 xl:ml-20">
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[58px] font-extrabold text-[#111827] leading-[1.1] tracking-tight mb-5">
+          {/* Left Text Content: Expansive typography for widescreen */}
+          <div className="relative z-10 lg:max-w-[480px] xl:max-w-[560px] 2xl:max-w-[620px] pt-4 lg:pt-8 lg:ml-8 xl:ml-16">
+            <h1 className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] 2xl:text-[70px] font-extrabold text-[#111827] leading-[1.08] tracking-tight mb-6">
               Loving Homes.<br />
               Healthy Pets.<br />
               Happy Lives.
             </h1>
 
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mb-7 font-normal">
+            <p className="text-gray-600 text-base sm:text-lg xl:text-xl leading-relaxed max-w-lg mb-8 font-normal">
               Trusted adoption, quality veterinary care, and essential pet products — everything your furry family needs, in one place.
             </p>
 
