@@ -71,11 +71,11 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
               <span>Certified Pet Adoption & Care Network</span>
             </div>
 
-            {/* 2. Cohesive, Meaningful Headline with Smart Line Spacing */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[38px] xl:text-[44px] 2xl:text-[50px] font-extrabold text-[#111827] tracking-tight mb-5 sm:mb-6 flex flex-col gap-1.5 sm:gap-2 xl:gap-2.5">
-              <span className="block whitespace-nowrap leading-[1.2]">Every Rescue Pet Deserves A Safe,</span>
-              <span className="block whitespace-nowrap leading-[1.2]">Loving Home, Quality Healthcare,</span>
-              <span className="block whitespace-nowrap leading-[1.2]">And A Lifetime Of Happiness.</span>
+            {/* 2. Clean, Concise 3-Word Cohesive Headline Statement */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] 2xl:text-[60px] font-extrabold text-[#111827] tracking-tight mb-5 sm:mb-6 flex flex-col gap-1.5 sm:gap-2 xl:gap-2.5">
+              <span className="block whitespace-nowrap leading-[1.2]">Every Rescued Pet</span>
+              <span className="block whitespace-nowrap leading-[1.2]">Deserves Loving Care</span>
+              <span className="block whitespace-nowrap leading-[1.2]">And Lifelong Happiness.</span>
             </h1>
 
             {/* 3. Rich Subtitle */}
