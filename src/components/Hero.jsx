@@ -63,7 +63,7 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
           </div>
 
           {/* Left Text Content: Rich, perfectly balanced vertical pillar filling the canvas */}
-          <div className="relative z-10 lg:max-w-[500px] xl:max-w-[580px] 2xl:max-w-[640px] pt-2 lg:pt-0 pb-4 lg:pb-8">
+          <div className="relative z-10 lg:max-w-[560px] xl:max-w-[640px] 2xl:max-w-[700px] pt-2 lg:pt-0 pb-4 lg:pb-8">
             
             {/* 1. Eyebrow Badge (Fills the upper area) */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50/90 border border-brand-200/80 text-brand-700 text-xs font-bold tracking-wide uppercase mb-3.5 sm:mb-4 shadow-xs">
@@ -71,16 +71,16 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
               <span>Certified Pet Adoption & Care Network</span>
             </div>
 
-            {/* 2. Bold, Taller Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[62px] 2xl:text-[68px] font-extrabold text-[#111827] leading-[1.08] tracking-tight mb-4 sm:mb-5">
-              Loving Homes.<br />
-              Healthy Pets.<br />
-              <span className="text-brand-600">Happy Lives.</span>
+            {/* 2. Bold 3-Word Headline (Solid Black, Expands to the Right) */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[50px] xl:text-[58px] 2xl:text-[64px] font-extrabold text-[#111827] leading-[1.12] tracking-tight mb-4 sm:mb-5">
+              Connecting Loving Homes.<br />
+              Protecting Healthy Pets.<br />
+              Inspiring Happy Lives.
             </h1>
 
             {/* 3. Rich Subtitle */}
-            <p className="text-gray-600 text-sm sm:text-base xl:text-lg leading-relaxed max-w-lg mb-6 sm:mb-7 font-normal">
-              Connecting compassionate families with pre-screened, fully vaccinated rescue companions. Ensuring thorough medical clearance, intelligent pet matching, and lifetime wellness.
+            <p className="text-gray-600 text-sm sm:text-base xl:text-lg leading-relaxed max-w-xl mb-6 sm:mb-7 font-normal">
+              Trusted adoption platform connecting certified shelters with caring families. We ensure thorough veterinary health clearance, smart lifestyle matching, and essential care products for lifelong companionship.
             </p>
 
             {/* 4. Action Buttons */}
