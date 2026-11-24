@@ -78,11 +78,11 @@ export default function AdoptablePets({ onSelectPet }) {
               <div
                 key={pet.id}
                 onClick={() => onSelectPet(pet)}
-                className="group relative bg-white rounded-[2rem] p-5 border border-gray-100/90 shadow-soft hover:shadow-2xl hover:shadow-brand-500/10 hover:-translate-y-2 hover:border-brand-200 transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden"
+                className="group relative bg-white rounded-[2rem] p-5 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/15 hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden"
               >
                 <div>
-                  {/* Pet Portrait Container with Soft Pastel Palette */}
-                  <div className={`relative rounded-2xl ${pet.colorBg || 'bg-brand-50'} p-3 mb-4 aspect-square flex items-center justify-center overflow-hidden transition-colors duration-300 group-hover:brightness-[1.02]`}>
+                  {/* Pet Portrait Container with Soft Pastel Palette and Border */}
+                  <div className={`relative rounded-2xl ${pet.colorBg || 'bg-brand-50'} border border-gray-200/70 p-3 mb-4 aspect-square flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:brightness-[1.02] group-hover:border-brand-200`}>
                     
                     {/* Species Badge */}
                     <span className="absolute top-3 left-3 z-10 text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm text-gray-800 shadow-xs flex items-center gap-1">
