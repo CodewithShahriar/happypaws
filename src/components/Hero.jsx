@@ -74,7 +74,7 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
 
             {/* 3. Rich Subtitle */}
             <p className="text-gray-600 text-sm sm:text-base xl:text-lg leading-relaxed max-w-xl mb-6 sm:mb-7 font-normal">
-              Trusted adoption platform connecting certified shelters with caring families. We ensure thorough veterinary health clearance, smart lifestyle matching, and essential care products for lifelong companionship.
+              Trusted adoption connecting certified shelters with caring families. We ensure veterinary health clearance, smart lifestyle matching, and essential products for lifelong companionship.
             </p>
 
             {/* 4. Action Buttons */}
