@@ -36,12 +36,12 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
                   </svg>
                 </div>
                 <span className="text-xl font-bold tracking-tight">
-                  Pawsy
+                  HappyPaws
                 </span>
               </div>
 
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm">
-                Pawsy is a digital rescue network connecting certified Philippine shelters and rescue pets directly with loving homes across the country.
+                HappyPaws is a digital rescue network connecting certified shelters and rescue pets directly with loving homes across the country.
               </p>
             </div>
 
@@ -89,7 +89,7 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-brand-400 flex-shrink-0" />
-                  <span>hello@pawsy.com.ph</span>
+                  <span>hello@happypaws.com</span>
                 </li>
               </ul>
             </div>
@@ -99,7 +99,7 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
           {/* Bottom Bar: Copyright & Social Icons */}
           <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
             <p>
-              Copyright © 2026 Pawsy Philippines. All Rights Reserved.
+              Copyright © 2026 HappyPaws. All Rights Reserved.
             </p>
 
             <div className="flex items-center gap-4">
