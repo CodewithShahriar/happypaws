@@ -33,14 +33,15 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           
           {/* ================= LEFT: Title & CTA ================= */}
-          <div className="lg:col-span-3 space-y-5 text-left">
+          <div className="lg:col-span-4 xl:col-span-3.5 space-y-5 text-left">
             <div className="inline-flex items-center gap-2 text-brand-600 text-xs font-bold tracking-wide uppercase">
               <span className="w-2 h-2 rounded-full bg-brand-600"></span>
               Our Promise To You
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#111827] tracking-tight leading-[1.12]">
-              Guaranteed Peace<br className="hidden sm:inline" /> of Mind
+            <h2 className="text-3xl sm:text-4xl lg:text-[36px] xl:text-[40px] font-extrabold text-[#111827] tracking-tight leading-[1.15]">
+              <span className="block whitespace-nowrap">Guaranteed Peace</span>
+              <span className="block">of Mind</span>
             </h2>
 
             <div className="pt-2">
@@ -55,7 +56,7 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
           </div>
 
           {/* ================= CENTER: Transparent Doctor with Beagle ================= */}
-          <div className="lg:col-span-4 flex items-center justify-center">
+          <div className="lg:col-span-3 xl:col-span-3.5 flex items-center justify-center">
             <div className="relative w-full max-w-[320px] sm:max-w-[360px]">
               <img
                 src="/images/vet_beagle_transparent.png"
