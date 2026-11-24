@@ -40,20 +40,20 @@ const PARTNERS = [
 
 export default function BrandPartners() {
   return (
-    <section className="pt-2 pb-6 sm:pt-3 sm:pb-8 bg-[#FAF7F2] relative overflow-hidden">
-      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
+    <section className="pt-0 pb-6 sm:pt-3 sm:pb-8 bg-[#FAF7F2] relative overflow-hidden">
+      <div className="w-full max-w-[1680px] mx-auto px-2 sm:px-8 md:px-12 lg:px-16">
         
-        {/* Single Row 7-Brand Grid: Smooth horizontal swipe on mobile, exact 7-cols on desktop */}
-        <div className="flex items-center gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 overflow-x-auto pb-2 sm:pb-0 sm:grid sm:grid-cols-7 justify-start sm:justify-between no-scrollbar">
+        {/* Single Row 7-Brand Grid - Exactly all 7 in 1 line on mobile and desktop, zero scrollbar */}
+        <div className="grid grid-cols-7 gap-1 sm:gap-3 md:gap-4 lg:gap-5 items-center justify-between">
           {PARTNERS.map((partner, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 min-w-[100px] sm:min-w-0 bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all duration-300 px-2.5 sm:px-3 md:px-4 py-2 sm:py-3 flex items-center justify-center h-14 sm:h-16 md:h-[72px] w-auto sm:w-full group"
+              className="bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all duration-300 px-1 sm:px-3 md:px-4 py-1.5 sm:py-2.5 md:py-3 flex items-center justify-center h-10 sm:h-16 md:h-[72px] w-full group"
             >
               <img
                 src={partner.image}
                 alt={partner.name}
-                className={`w-auto ${partner.className} object-contain transition-transform duration-300 group-hover:scale-105`}
+                className="w-auto h-3.5 sm:h-6 md:h-8 max-w-[85%] sm:max-w-[100px] object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           ))}

@@ -3,7 +3,7 @@ import { ArrowRight, Play, ShieldPlus, Star, CheckCircle2 } from 'lucide-react';
 
 export default function Hero({ onOpenAdopt, onOpenStory }) {
   return (
-    <section id="hero" className="relative bg-[#FAF7F2] min-h-[calc(100vh-72px)] flex items-center justify-center overflow-hidden py-4 sm:py-6 lg:py-0">
+    <section id="hero" className="relative bg-[#FAF7F2] min-h-0 lg:min-h-[calc(100vh-72px)] flex items-center justify-center overflow-hidden pt-1 pb-4 sm:pb-8 lg:py-0">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 relative">
         
         {/* Stage Container: On mobile flex-col with image on top; on lg relative with image on right */}
@@ -12,16 +12,24 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
           {/* 1. Illustration Stage: Appears FIRST on mobile (order-1 lg:order-2) */}
           <div className="order-1 lg:order-2 w-full lg:w-auto lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 flex justify-center lg:justify-end pointer-events-none mb-4 sm:mb-6 lg:mb-0">
             <div className="relative w-full max-w-[460px] sm:max-w-[580px] lg:max-w-[920px] xl:max-w-[1040px] 2xl:max-w-[1140px]">
+              {/* Mobile Image: Cropped past the blue bowl */}
+              <img
+                src="/images/hero_mobile_cropped.png"
+                alt="Every Rescued Pet Deserves Loving Care And Lifelong Happiness"
+                className="block lg:hidden w-full h-auto max-h-[290px] sm:max-h-[360px] object-contain select-none mx-auto"
+              />
+
+              {/* Desktop Image: Complete composition */}
               <img
                 src="/images/hero_transparent.png"
                 alt="Every Rescued Pet Deserves Loving Care And Lifelong Happiness"
-                className="w-full h-auto max-h-[300px] sm:max-h-[380px] md:max-h-[440px] lg:max-h-[calc(100vh-140px)] object-contain select-none"
+                className="hidden lg:block w-full h-auto max-h-[calc(100vh-140px)] object-contain select-none"
               />
 
-              {/* Floating Card: Happy Pet Stories (Top Right) */}
+              {/* Floating Card: Happy Pet Stories (Top Left on Mobile so it does not cover pets) */}
               <button
                 onClick={onOpenStory}
-                className="pointer-events-auto absolute top-[3%] sm:top-[6%] right-[2%] sm:right-[5%] bg-white px-2.5 py-1.5 sm:px-3.5 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-card flex items-center gap-2 sm:gap-2.5 border border-gray-100 hover:scale-105 transition-all text-left group z-20"
+                className="pointer-events-auto absolute top-0 sm:top-[6%] left-0 sm:left-auto sm:right-[5%] bg-white/95 sm:bg-white px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-card flex items-center gap-1.5 sm:gap-2.5 border border-gray-100 hover:scale-105 transition-all text-left group z-20"
               >
                 <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-amber-100 overflow-hidden relative flex-shrink-0 flex items-center justify-center border border-amber-200">
                   <img
@@ -45,8 +53,8 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
                 </div>
               </button>
 
-              {/* Floating Badge: Verified Care (Bottom Right of Bed) */}
-              <div className="pointer-events-auto absolute bottom-[6%] sm:bottom-[8%] right-[2%] sm:right-[7%] bg-white px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-card flex items-center gap-2 sm:gap-2.5 border border-gray-100 z-20">
+              {/* Floating Badge: Verified Care (Top Right on Mobile so it does not cover pets) */}
+              <div className="pointer-events-auto absolute top-0 sm:top-auto sm:bottom-[8%] right-0 sm:right-[7%] bg-white/95 sm:bg-white px-2 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-card flex items-center gap-1.5 sm:gap-2.5 border border-gray-100 z-20">
                 <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg sm:rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0">
                   <ShieldPlus className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-600" />
                 </div>
