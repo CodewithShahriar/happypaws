@@ -17,7 +17,7 @@ export default function Navbar({ onOpenCart, cartCount, onOpenSearch, onOpenAdop
     <header className={`sticky top-0 z-40 transition-all duration-300 ${
       isScrolled ? 'bg-[#FAF7F2]/95 backdrop-blur-md shadow-xs py-3.5' : 'bg-[#FAF7F2] py-4 sm:py-5'
     }`}>
-      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
           {/* Logo (matching 2nd screenshot: black paw icon + bold text) */}

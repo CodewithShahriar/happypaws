@@ -3,19 +3,19 @@ import { ArrowRight, Play, ShieldPlus } from 'lucide-react';
 
 export default function Hero({ onOpenAdopt, onOpenStory }) {
   return (
-    <section id="hero" className="relative pt-4 pb-6 lg:pt-10 lg:pb-12 xl:pt-14 xl:pb-16 bg-[#FAF7F2] min-h-[calc(100vh-140px)] flex items-center">
-      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
+    <section id="hero" className="relative bg-[#FAF7F2] min-h-[calc(100vh-72px)] flex items-center justify-center overflow-hidden py-6 lg:py-0">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
         
-        {/* Stage Container with natural ample height so the image is NEVER clipped at top */}
-        <div className="relative w-full min-h-[520px] lg:min-h-[620px] xl:min-h-[680px] 2xl:min-h-[720px] flex flex-col justify-center">
+        {/* Stage Container */}
+        <div className="relative w-full min-h-[460px] lg:min-h-[560px] xl:min-h-[620px] flex items-center">
           
-          {/* Background Illustration Stage: Positioned from top-2 so Corgi's ears & Stories badge have plenty of room */}
-          <div className="lg:absolute lg:top-2 lg:right-0 pointer-events-none w-full flex justify-end">
-            <div className="relative w-full max-w-[960px] xl:max-w-[1100px] 2xl:max-w-[1180px] ml-auto">
+          {/* Background Illustration Stage: Positioned vertically centered on the right */}
+          <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 pointer-events-none w-full flex justify-end">
+            <div className="relative w-full max-w-[850px] lg:max-w-[920px] xl:max-w-[980px] ml-auto">
               <img
                 src="/images/hero_transparent.png"
                 alt="Loving Homes, Healthy Pets, Happy Lives - Corgi dog and two cats resting on pet bed"
-                className="w-full h-auto object-contain select-none"
+                className="w-full h-auto max-h-[calc(100vh-140px)] object-contain select-none"
               />
 
               {/* Floating Card: Happy Pet Stories (Top Right) */}
@@ -62,23 +62,23 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
             </div>
           </div>
 
-          {/* Left Text Content: Expansive typography for widescreen */}
-          <div className="relative z-10 lg:max-w-[480px] xl:max-w-[560px] 2xl:max-w-[620px] pt-4 lg:pt-8 lg:ml-8 xl:ml-16">
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] 2xl:text-[70px] font-extrabold text-[#111827] leading-[1.08] tracking-tight mb-6">
+          {/* Left Text Content: Perfectly aligned with Navbar logo, positioned higher up in green box area */}
+          <div className="relative z-10 lg:max-w-[480px] xl:max-w-[540px] pt-2 lg:pt-0 pb-4 lg:pb-14">
+            <h1 className="text-4xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-extrabold text-[#111827] leading-[1.08] tracking-tight mb-4 sm:mb-5">
               Loving Homes.<br />
               Healthy Pets.<br />
               Happy Lives.
             </h1>
 
-            <p className="text-gray-600 text-base sm:text-lg xl:text-xl leading-relaxed max-w-lg mb-8 font-normal">
+            <p className="text-gray-600 text-sm sm:text-base xl:text-lg leading-relaxed max-w-md mb-6 sm:mb-7 font-normal">
               Trusted adoption, quality veterinary care, and essential pet products — everything your furry family needs, in one place.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-5 sm:gap-6">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-5">
               <button
                 onClick={onOpenAdopt}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-full shadow-purple-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-sm sm:text-base"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-full shadow-purple-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-xs sm:text-sm"
               >
                 <span>Adopt a Companion</span>
                 <ArrowRight className="w-4 h-4" />
@@ -86,7 +86,7 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
 
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-800 hover:text-brand-600 transition-colors group py-2"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-800 hover:text-brand-600 transition-colors group py-2"
               >
                 <span className="border-b border-gray-400 group-hover:border-brand-600 pb-0.5">Explore Pet Care</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

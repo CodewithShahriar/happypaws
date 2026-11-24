@@ -7,7 +7,7 @@ export default function CompleteSolutions({ onOpenBooking }) {
 
   return (
     <section id="services" className="py-16 lg:py-20 bg-[#FAF7F2]">
-      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main 2-Column Grid with Perfect Alignment and Zero Gaps */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">

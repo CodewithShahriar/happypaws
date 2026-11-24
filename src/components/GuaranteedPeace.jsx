@@ -27,7 +27,7 @@ const PROMISES = [
 export default function GuaranteedPeace({ onOpenAdopt }) {
   return (
     <section className="py-16 lg:py-24 bg-[#FAF7F2] relative">
-      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Exact Reference 3-Column Layout: Left Title/CTA + Center Doctor with Beagle + Right 4 Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
