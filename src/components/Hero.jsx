@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Play, ShieldPlus } from 'lucide-react';
+import { ArrowRight, Play, ShieldPlus, Sparkles, Star, CheckCircle2 } from 'lucide-react';
 
 export default function Hero({ onOpenAdopt, onOpenStory }) {
   return (
@@ -7,7 +7,7 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 relative">
         
         {/* Stage Container */}
-        <div className="relative w-full min-h-[500px] lg:min-h-[600px] xl:min-h-[660px] 2xl:min-h-[720px] flex items-center">
+        <div className="relative w-full min-h-[520px] lg:min-h-[620px] xl:min-h-[680px] 2xl:min-h-[740px] flex items-center">
           
           {/* Background Illustration Stage: Positioned vertically centered on the right */}
           <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 pointer-events-none w-full flex justify-end">
@@ -62,20 +62,29 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
             </div>
           </div>
 
-          {/* Left Text Content: Perfectly aligned with Navbar logo, positioned higher up in green box area */}
-          <div className="relative z-10 lg:max-w-[480px] xl:max-w-[560px] 2xl:max-w-[620px] pt-2 lg:pt-0 pb-4 lg:pb-12">
+          {/* Left Text Content: Rich, perfectly balanced vertical pillar filling the canvas */}
+          <div className="relative z-10 lg:max-w-[500px] xl:max-w-[580px] 2xl:max-w-[640px] pt-2 lg:pt-0 pb-4 lg:pb-8">
+            
+            {/* 1. Eyebrow Badge (Fills the upper area) */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50/90 border border-brand-200/80 text-brand-700 text-xs font-bold tracking-wide uppercase mb-3.5 sm:mb-4 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-brand-600" />
+              <span>Certified Pet Adoption & Care Network</span>
+            </div>
+
+            {/* 2. Bold, Taller Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[62px] 2xl:text-[68px] font-extrabold text-[#111827] leading-[1.08] tracking-tight mb-4 sm:mb-5">
               Loving Homes.<br />
               Healthy Pets.<br />
-              Happy Lives.
+              <span className="text-brand-600">Happy Lives.</span>
             </h1>
 
-            <p className="text-gray-600 text-sm sm:text-base xl:text-lg leading-relaxed max-w-md mb-6 sm:mb-7 font-normal">
-              Trusted adoption, quality veterinary care, and essential pet products — everything your furry family needs, in one place.
+            {/* 3. Rich Subtitle */}
+            <p className="text-gray-600 text-sm sm:text-base xl:text-lg leading-relaxed max-w-lg mb-6 sm:mb-7 font-normal">
+              Connecting compassionate families with pre-screened, fully vaccinated rescue companions. Ensuring thorough medical clearance, intelligent pet matching, and lifetime wellness.
             </p>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-5">
+            {/* 4. Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4 sm:gap-5 mb-6 sm:mb-7">
               <button
                 onClick={onOpenAdopt}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-full shadow-purple-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-xs sm:text-sm"
@@ -92,6 +101,64 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
+
+            {/* 5. Trust Social Proof Strip (Fills the lower gap below buttons) */}
+            <div className="pt-4 sm:pt-5 border-t border-gray-200/80 space-y-3">
+              <div className="flex flex-wrap items-center gap-4">
+                {/* Adopter Avatars */}
+                <div className="flex items-center -space-x-2.5">
+                  <img
+                    src="/images/dr_patricia_avatar_crop.jpg"
+                    alt="Adopter"
+                    className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                  />
+                  <img
+                    src="/images/pet_bambi.jpg"
+                    alt="Pet story"
+                    className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                  />
+                  <img
+                    src="/images/pet_milo.jpg"
+                    alt="Pet story"
+                    className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                  />
+                  <div className="w-8 h-8 rounded-full border-2 border-white bg-brand-600 text-white text-[10px] font-extrabold flex items-center justify-center shadow-xs">
+                    15k+
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="flex text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                      ))}
+                    </div>
+                    <span className="text-xs font-extrabold text-gray-900">4.9 / 5.0</span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 font-medium">
+                    Trusted by 15,000+ loving pet adopters & shelters
+                  </p>
+                </div>
+              </div>
+
+              {/* Quick Trust Checkmarks */}
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] sm:text-xs font-medium text-gray-600">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-600" />
+                  100% Medically Cleared
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-600" />
+                  Intelligent Matching
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-600" />
+                  24/7 Vet Advisory
+                </span>
+              </div>
+            </div>
+
           </div>
 
         </div>
