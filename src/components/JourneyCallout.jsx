@@ -6,11 +6,13 @@ export default function JourneyCallout({ onOpenAdopt }) {
     <section className="py-12 lg:py-16 bg-[#FAF7F2] relative">
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Outer relative wrapper so the bottom-left purple circle can protrude OUTSIDE the card */}
+        {/* Outer relative wrapper so the bottom-left purple accent can hang below the card */}
         <div className="relative">
 
-          {/* 1. Purple circle accent sitting OUTSIDE the card at bottom-left corner */}
-          <div className="absolute -bottom-5 -left-5 sm:-bottom-7 sm:-left-7 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-brand-600 z-20 pointer-events-none shadow-md"></div>
+          {/* 1. Purple accent sliced flat at the card's left boundary (half-cut at the line) and hanging below */}
+          <div className="absolute -bottom-6 sm:-bottom-8 left-0 overflow-hidden w-10 sm:w-14 h-20 sm:h-28 z-20 pointer-events-none">
+            <div className="w-20 sm:w-28 h-20 sm:h-28 rounded-full bg-brand-600 -ml-10 sm:-ml-14 shadow-sm"></div>
+          </div>
 
           {/* Panoramic Banner matching Reference Design (Image 1) */}
           <div className="relative rounded-[2.5rem] bg-[#FAF7F2] border border-amber-100/70 shadow-soft overflow-hidden min-h-[340px] sm:min-h-[380px] lg:min-h-[420px] flex items-center justify-center">
