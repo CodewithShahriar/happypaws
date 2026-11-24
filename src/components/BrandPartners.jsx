@@ -43,12 +43,12 @@ export default function BrandPartners() {
     <section className="pt-2 pb-6 sm:pt-3 sm:pb-8 bg-[#FAF7F2] relative overflow-hidden">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
-        {/* Single Row 7-Brand Grid - Fits all 7 in 1 line */}
-        <div className="grid grid-cols-7 gap-2 sm:gap-3 md:gap-4 lg:gap-5 items-center justify-between">
+        {/* Single Row 7-Brand Grid: Smooth horizontal swipe on mobile, exact 7-cols on desktop */}
+        <div className="flex items-center gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 overflow-x-auto pb-2 sm:pb-0 sm:grid sm:grid-cols-7 justify-start sm:justify-between no-scrollbar">
           {PARTNERS.map((partner, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all duration-300 px-2 sm:px-3 md:px-4 py-2 sm:py-3 flex items-center justify-center h-14 sm:h-16 md:h-[72px] w-full group"
+              className="flex-shrink-0 min-w-[100px] sm:min-w-0 bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all duration-300 px-2.5 sm:px-3 md:px-4 py-2 sm:py-3 flex items-center justify-center h-14 sm:h-16 md:h-[72px] w-auto sm:w-full group"
             >
               <img
                 src={partner.image}

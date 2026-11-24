@@ -116,12 +116,12 @@ export default function AboutSection() {
             </div>
 
             {/* Quick Impact Metrics Strip - Perfectly Fills Space Between Cards and Quote */}
-            <div className="bg-white rounded-3xl p-4 sm:p-4.5 border-2 border-gray-200 hover:border-brand-400 shadow-soft transition-all duration-300">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+            <div className="bg-white rounded-3xl p-3.5 sm:p-4.5 border-2 border-gray-200 hover:border-brand-400 shadow-soft transition-all duration-300">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                 {IMPACT_METRICS.map((stat, idx) => {
                   const Icon = stat.icon;
                   return (
-                    <div key={idx} className={`flex items-center gap-2.5 ${idx !== 0 ? 'sm:pl-3' : ''} ${idx >= 2 ? 'pt-2 sm:pt-0' : ''}`}>
+                    <div key={idx} className="flex items-center gap-2 sm:gap-2.5 p-2 rounded-2xl bg-[#FAF7F2]/60 sm:bg-transparent">
                       <div className="w-8 h-8 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0">
                         <Icon className="w-4 h-4" />
                       </div>

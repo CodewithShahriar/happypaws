@@ -38,11 +38,11 @@ export default function FeaturedShop({ onAddToCart }) {
           {PRODUCTS.slice(0, 6).map((prod) => (
             <div
               key={prod.id}
-              className="bg-white rounded-3xl p-6 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              className="bg-white rounded-3xl p-5 sm:p-6 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
             >
               <div>
-                {/* Product Transparent Image Container (Much Bigger & Prominent) */}
-                <div className="relative rounded-2xl bg-[#FAF7F2]/80 border border-gray-200/70 group-hover:border-brand-200 p-3 sm:p-4 mb-5 flex items-center justify-center overflow-hidden h-72 sm:h-80 w-full transition-colors duration-300">
+                {/* Product Transparent Image Container */}
+                <div className="relative rounded-2xl bg-[#FAF7F2]/80 border border-gray-200/70 group-hover:border-brand-200 p-3 sm:p-4 mb-4 sm:mb-5 flex items-center justify-center overflow-hidden h-60 sm:h-80 w-full transition-colors duration-300">
                   <img
                     src={prod.image}
                     alt={prod.name}

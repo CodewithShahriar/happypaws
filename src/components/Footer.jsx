@@ -18,7 +18,7 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
         </div>
 
         {/* Main Dark Card Container matching Reference Mockup */}
-        <div className="bg-[#111827] text-white rounded-[2.5rem] p-8 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
+        <div className="bg-[#111827] text-white rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
           
           {/* 4 Column Links Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
