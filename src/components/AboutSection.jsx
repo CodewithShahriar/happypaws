@@ -53,33 +53,41 @@ export default function AboutSection() {
         </div>
 
         {/* 2-Column Main Layout with Perfect Vertical Alignment */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
           
           {/* Left Column: 4 Detailed Feature Cards (2x2) + Doctor Quote Card (No Awkward Gaps) */}
-          <div className="lg:col-span-7 flex flex-col justify-between gap-4 sm:gap-5">
+          <div className="lg:col-span-7 flex flex-col justify-between gap-4">
             
-            {/* 2x2 Grid of Feature Cards with Richer Details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              {DETAILED_VALUES.map((val, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white rounded-3xl p-6 border border-gray-100 shadow-soft hover:shadow-card transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">
-                      {val.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                      {val.desc}
-                    </p>
+            {/* 2x2 Grid of Feature Cards with Richer Details, Border & Interactive Hover */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+              {DETAILED_VALUES.map((val, idx) => {
+                const Icon = val.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="group relative bg-white rounded-3xl p-5 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/10 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                  >
+                    <div>
+                      {/* Icon with interactive hover background */}
+                      <div className="w-9 h-9 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300 shadow-xs">
+                        <Icon className="w-4.5 h-4.5" />
+                      </div>
+
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors mb-1.5">
+                        {val.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        {val.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
-            {/* Doctor Quote Card Below (Natural Compact Spacing) */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-100 shadow-soft flex flex-col justify-between">
-              <div className="flex items-center gap-3.5 mb-3">
+            {/* Doctor Quote Card Below (Natural Compact Spacing with Matching Border) */}
+            <div className="bg-white rounded-3xl p-5 sm:p-6 border-2 border-gray-200 hover:border-brand-300 shadow-soft transition-all duration-300 flex flex-col justify-between">
+              <div className="flex items-center gap-3.5 mb-2.5">
                 <div className="w-11 h-11 rounded-full overflow-hidden border border-brand-200 flex-shrink-0">
                   <img
                     src="/images/dr_patricia_avatar_crop.jpg"
@@ -98,18 +106,18 @@ export default function AboutSection() {
               </div>
 
               <p className="text-xs sm:text-sm text-gray-600 italic leading-relaxed">
-                "Every rescue animal deserves a second chance at a healthy life. Through Pawsy, we ensure that every adopted pet enters their new home with complete vaccination records, proper medical clearance, and a strong foundation for lifelong wellness."
+                "Every rescue animal deserves a second chance at a healthy life. Through HappyPaws, we ensure that every adopted pet enters their new home with complete vaccination records, proper medical clearance, and a strong foundation for lifelong wellness."
               </p>
             </div>
 
           </div>
 
-          {/* Right Column: Doctor Cropped at Marked Red Line + Mission Paragraph */}
+          {/* Right Column: Doctor Photo & Mission Paragraph with ZERO GAPS */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="bg-white rounded-3xl p-4 sm:p-5 border border-gray-100 shadow-card flex flex-col justify-between h-full">
+            <div className="bg-white rounded-3xl p-5 border-2 border-gray-200 hover:border-brand-300 shadow-card transition-all duration-300 flex flex-col h-full">
               
-              {/* Cropped Photo: cuts off at elbows/cat paws per user red mark */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3.8] w-full bg-brand-50 mb-4 sm:mb-5">
+              {/* Photo: smoothly expands with flex-1 to eliminate the empty gap */}
+              <div className="relative rounded-2xl overflow-hidden flex-1 min-h-[380px] lg:min-h-[440px] w-full bg-brand-50 mb-4">
                 <img
                   src="/images/dr_patricia_white_bg.jpg"
                   alt="Dr. Patricia Santos holding a rescued tabby cat"
@@ -117,10 +125,14 @@ export default function AboutSection() {
                 />
               </div>
 
-              {/* Mission Text Below Photo */}
-              <div className="px-2 pb-2">
+              {/* Mission Text: Sits snugly below photo with no empty gap */}
+              <div className="px-1 pb-1">
+                <div className="flex items-center gap-2 text-brand-600 text-[11px] font-bold uppercase tracking-wider mb-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
+                  Our Lifelong Commitment
+                </div>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  Founded in 2024, Pawsy began with a simple mission: to bridge the gap between overcrowded Philippine animal shelters and prospective pet parents. We combine advanced rescue records to make the adoption process transparent, accessible, and efficient.
+                  Founded in 2024, HappyPaws began with a simple mission: to bridge the gap between overcrowded Philippine animal shelters and prospective pet parents. We combine advanced rescue records to make the adoption process transparent, accessible, and efficient.
                 </p>
               </div>
 
