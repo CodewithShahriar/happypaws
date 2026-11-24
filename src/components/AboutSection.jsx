@@ -26,7 +26,7 @@ const DETAILED_VALUES = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="pt-6 pb-16 lg:pt-8 lg:pb-20 bg-[#FAF7F2] relative">
+    <section id="about" className="pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24 bg-[#FAF7F2] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
