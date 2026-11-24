@@ -33,13 +33,13 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           
           {/* ================= LEFT: Title & CTA ================= */}
-          <div className="lg:col-span-3.5 space-y-5 text-left">
+          <div className="lg:col-span-3 xl:col-span-3 space-y-5 text-left">
             <div className="inline-flex items-center gap-2 text-brand-600 text-xs font-bold tracking-wide uppercase">
               <span className="w-2 h-2 rounded-full bg-brand-600"></span>
               Our Promise To You
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[36px] xl:text-[40px] font-extrabold text-[#111827] tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[32px] xl:text-[38px] font-extrabold text-[#111827] tracking-tight leading-[1.15]">
               <span className="block whitespace-nowrap">Guaranteed Peace</span>
               <span className="block">of Mind</span>
             </h2>
@@ -55,9 +55,9 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
             </div>
           </div>
 
-          {/* ================= CENTER: Transparent Doctor with Beagle (Enlarged) ================= */}
-          <div className="lg:col-span-4 flex items-center justify-center">
-            <div className="relative w-full max-w-[380px] sm:max-w-[420px] xl:max-w-[450px]">
+          {/* ================= CENTER: Transparent Doctor with Beagle ================= */}
+          <div className="lg:col-span-3 xl:col-span-4 flex items-center justify-center">
+            <div className="relative w-full max-w-[300px] sm:max-w-[340px] xl:max-w-[380px]">
               <img
                 src="/images/vet_beagle_transparent.png"
                 alt="Veterinarian kneeling with friendly Beagle dog"
@@ -67,22 +67,22 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
           </div>
 
           {/* ================= RIGHT: 4 Cards (2x2 Grid) ================= */}
-          <div className="lg:col-span-4.5 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div className="lg:col-span-6 xl:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 xl:gap-5">
             {PROMISES.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100 shadow-soft hover:shadow-card transition-all flex flex-col justify-between"
+                  className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 xl:p-6 border border-gray-100 shadow-soft hover:shadow-card transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-3 sm:mb-4">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2">
+                    <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-1.5 sm:mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-gray-500 leading-relaxed">
+                    <p className="text-[11px] sm:text-xs text-gray-500 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
