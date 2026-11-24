@@ -71,11 +71,11 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
               <span>Certified Pet Adoption & Care Network</span>
             </div>
 
-            {/* 2. Bold 3-Word Headline (Solid Black, Expands to the Right) */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[50px] xl:text-[58px] 2xl:text-[64px] font-extrabold text-[#111827] leading-[1.12] tracking-tight mb-4 sm:mb-5">
-              Connecting Loving Homes.<br />
-              Protecting Healthy Pets.<br />
-              Inspiring Happy Lives.
+            {/* 2. Bold Clean 3-Line Headline (Solid Black, Never Breaks into 5 Lines) */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[52px] xl:text-[60px] 2xl:text-[66px] font-extrabold text-[#111827] leading-[1.12] tracking-tight mb-4 sm:mb-5">
+              <span className="block whitespace-nowrap">Loving Homes.</span>
+              <span className="block whitespace-nowrap">Healthy Pets.</span>
+              <span className="block whitespace-nowrap">Happy Lives.</span>
             </h1>
 
             {/* 3. Rich Subtitle */}
@@ -108,18 +108,18 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
                 {/* Adopter Avatars */}
                 <div className="flex items-center -space-x-2.5">
                   <img
-                    src="/images/dr_patricia_avatar_crop.jpg"
-                    alt="Adopter"
+                    src="/images/customer_avatar_1.jpg"
+                    alt="Happy pet adopter"
                     className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
                   />
                   <img
-                    src="/images/pet_bambi.jpg"
-                    alt="Pet story"
+                    src="/images/customer_avatar_2.jpg"
+                    alt="Happy pet adopter"
                     className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
                   />
                   <img
-                    src="/images/pet_milo.jpg"
-                    alt="Pet story"
+                    src="/images/customer_avatar_3.jpg"
+                    alt="Happy pet adopter"
                     className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
                   />
                   <div className="w-8 h-8 rounded-full border-2 border-white bg-brand-600 text-white text-[10px] font-extrabold flex items-center justify-center shadow-xs">
