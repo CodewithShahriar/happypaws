@@ -28,10 +28,10 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
   return (
     <section className="py-16 lg:py-24 bg-[#FAF7F2] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Exact Reference 3-Column Layout: Left Title/CTA + Center Doctor with Beagle + Right 4 Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
-          
+
           {/* ================= LEFT: Title & CTA ================= */}
           <div className="lg:col-span-3 xl:col-span-3 space-y-5 text-left">
             <div className="inline-flex items-center gap-2 text-brand-600 text-xs font-bold tracking-wide uppercase">
