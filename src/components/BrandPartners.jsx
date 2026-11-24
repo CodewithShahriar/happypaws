@@ -32,11 +32,6 @@ const PARTNERS = [
     className: "h-4.5 sm:h-5.5 md:h-6.5 max-w-[85px] sm:max-w-[100px] md:max-w-[115px]" 
   },
   { 
-    name: "Eukanuba", 
-    image: "/images/partners/partner_eukanuba.png", 
-    className: "h-4.5 sm:h-5.5 md:h-6.5 max-w-[85px] sm:max-w-[100px] md:max-w-[115px]" 
-  },
-  { 
     name: "ACANA", 
     image: "/images/partners/partner_acana.png", 
     className: "h-6 sm:h-7 md:h-8 max-w-[85px] sm:max-w-[100px] md:max-w-[110px]" 
@@ -45,7 +40,7 @@ const PARTNERS = [
 
 export default function BrandPartners() {
   return (
-    <section className="py-6 sm:py-8 bg-[#FAF7F2] relative overflow-hidden">
+    <section className="py-2 sm:py-3 bg-[#FAF7F2] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Single Row 7-Brand Grid - Fits all 7 in 1 line */}

@@ -3,7 +3,7 @@ import { ArrowRight, Play, ShieldPlus } from 'lucide-react';
 
 export default function Hero({ onOpenAdopt, onOpenStory }) {
   return (
-    <section id="hero" className="relative pt-6 pb-6 lg:pt-10 lg:pb-12 bg-[#FAF7F2]">
+    <section id="hero" className="relative pt-6 pb-2 lg:pt-8 lg:pb-4 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Stage Container with natural ample height so the image is NEVER clipped at top */}
