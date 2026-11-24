@@ -233,10 +233,13 @@ export const PETS = [
     age: "1 Year",
     location: "Alabang Sanctuary",
     personality: "Friendly ginger explorer with big golden eyes, loves head scratches and purring in warm laps.",
+    tags: ["Lap Cat", "Gentle", "Cuddler"],
+    temperament: "Playful & Loving",
+    medical: "100% Vaccinated & Neutered",
     vaccinated: true,
     neutered: true,
     image: "/images/pet_ginger_cat.png",
-    colorBg: "bg-orange-50",
+    colorBg: "bg-orange-50/80",
     ribbonColor: "bg-orange-400"
   },
   {
@@ -248,10 +251,13 @@ export const PETS = [
     age: "8 Months",
     location: "San Juan Foster",
     personality: "Curious and playful young tabby with gentle green eyes who loves chasing string toys and cuddle time.",
+    tags: ["Playful", "Curious", "Kid Friendly"],
+    temperament: "Energetic Explorer",
+    medical: "Vaccinated & Dewormed",
     vaccinated: true,
     neutered: true,
     image: "/images/pet_tabby_cat.png",
-    colorBg: "bg-amber-50",
+    colorBg: "bg-amber-50/80",
     ribbonColor: "bg-amber-400"
   },
   {
@@ -263,10 +269,13 @@ export const PETS = [
     age: "1.5 Years",
     location: "San Pedro Shelter",
     personality: "Sunny, joyful sweetheart with a heart of gold. Loves fetch, swimming, kids, and giving warm kisses.",
+    tags: ["Family Dog", "Trained", "Loves Fetch"],
+    temperament: "Gentle & Loyal",
+    medical: "Fully Vaccinated & Spayed",
     vaccinated: true,
     neutered: true,
     image: "/images/pet_golden_retriever.png",
-    colorBg: "bg-yellow-50",
+    colorBg: "bg-yellow-50/80",
     ribbonColor: "bg-yellow-400"
   },
   {
@@ -278,10 +287,13 @@ export const PETS = [
     age: "2 Years",
     location: "Makati Foster Care",
     personality: "Hilarious, affectionate little shadow who loves snoring softly and greeting everyone like an old best friend.",
+    tags: ["Apartment Friendly", "Calm", "Low Energy"],
+    temperament: "Comedic Snuggler",
+    medical: "Vaccinated & Neutered",
     vaccinated: true,
     neutered: true,
     image: "/images/pet_pug.png",
-    colorBg: "bg-stone-50",
+    colorBg: "bg-stone-50/80",
     ribbonColor: "bg-stone-400"
   },
   {
@@ -293,10 +305,13 @@ export const PETS = [
     age: "2 Years",
     location: "Quezon City Shelter",
     personality: "Regal and calm cloud of fluff with mesmerizing emerald eyes, loves quiet corners and gentle coat brushing.",
+    tags: ["Quiet Home", "Calm", "Indoor Only"],
+    temperament: "Serene & Regal",
+    medical: "Vaccinated & Spayed",
     vaccinated: true,
     neutered: true,
     image: "/images/pet_white_persian.png",
-    colorBg: "bg-sky-50",
+    colorBg: "bg-sky-50/80",
     ribbonColor: "bg-sky-400"
   },
   {
@@ -308,10 +323,13 @@ export const PETS = [
     age: "1 Year",
     location: "Taguig Rescue Hub",
     personality: "Dapper gentleman in black tie, super affectionate and loves curling up on cozy fleece blankets.",
+    tags: ["Social", "Talkative", "Great with Cats"],
+    temperament: "Dapper & Affectionate",
+    medical: "Vaccinated & Neutered",
     vaccinated: true,
     neutered: true,
     image: "/images/pet_tuxedo_cat.png",
-    colorBg: "bg-purple-50",
+    colorBg: "bg-purple-50/80",
     ribbonColor: "bg-purple-400"
   },
   {
@@ -323,10 +341,13 @@ export const PETS = [
     age: "10 Months",
     location: "Pasig Sanctuary Hub",
     personality: "Charming, fluffy companion who loves gentle strolls in the park and resting his chin on your knee.",
+    tags: ["Hypoallergenic", "Gentle", "Sweet"],
+    temperament: "Pocket Companion",
+    medical: "Vaccinated & Microchipped",
     vaccinated: true,
     neutered: true,
     image: "/images/pet_shih_tzu.png",
-    colorBg: "bg-rose-50",
+    colorBg: "bg-rose-50/80",
     ribbonColor: "bg-rose-400"
   },
   {
@@ -338,10 +359,13 @@ export const PETS = [
     age: "2.5 Years",
     location: "Mandaluyong Center",
     personality: "Noble, intelligent, and deeply loyal guardian who is eager to learn and excels at obedience training.",
+    tags: ["Obedience Trained", "Protector", "Active"],
+    temperament: "Intelligent & Devoted",
+    medical: "Fully Vaccinated & Neutered",
     vaccinated: true,
     neutered: true,
     image: "/images/pet_german_shepherd.png",
-    colorBg: "bg-emerald-50",
+    colorBg: "bg-emerald-50/80",
     ribbonColor: "bg-emerald-400"
   }
 ];
