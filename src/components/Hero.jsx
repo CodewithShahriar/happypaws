@@ -110,19 +110,19 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
                   <img
                     src="/images/customer_avatar_1.jpg"
                     alt="Happy pet adopter"
-                    className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                    className="w-9 h-9 rounded-full border-2 border-white object-cover shadow-xs"
                   />
                   <img
                     src="/images/customer_avatar_2.jpg"
                     alt="Happy pet adopter"
-                    className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                    className="w-9 h-9 rounded-full border-2 border-white object-cover shadow-xs"
                   />
                   <img
                     src="/images/customer_avatar_3.jpg"
                     alt="Happy pet adopter"
-                    className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                    className="w-9 h-9 rounded-full border-2 border-white object-cover shadow-xs"
                   />
-                  <div className="w-8 h-8 rounded-full border-2 border-white bg-brand-600 text-white text-[10px] font-extrabold flex items-center justify-center shadow-xs">
+                  <div className="w-9 h-9 rounded-full border-2 border-white bg-brand-600 text-white text-[11px] font-extrabold flex items-center justify-center shadow-xs">
                     15k+
                   </div>
                 </div>
