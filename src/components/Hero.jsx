@@ -69,7 +69,7 @@ export default function Hero({ onOpenAdopt, onOpenStory }) {
             <h1 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] 2xl:text-[60px] font-extrabold text-[#111827] tracking-tight mb-5 sm:mb-6 flex flex-col gap-1 sm:gap-1.5 xl:gap-2">
               <span className="block whitespace-nowrap leading-[1.2]">Every Rescued Pet</span>
               <span className="block whitespace-nowrap leading-[1.2]">Deserves Loving Care</span>
-              <span className="block whitespace-nowrap leading-[1.2]">And Lifelong Happiness.</span>
+              <span className="block whitespace-nowrap leading-[1.2]">And Lifelong Happiness</span>
             </h1>
 
             {/* 3. Rich Subtitle */}
