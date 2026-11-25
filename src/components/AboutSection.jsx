@@ -173,7 +173,7 @@ export default function AboutSection({ onOpenStory }) {
           {/* ================= RIGHT COLUMN: SMOOTH SLOW SLIDE-IN FROM RIGHT ================= */}
           <div className="lg:col-span-7 flex flex-col justify-between gap-4">
             
-            {/* 4 Dynamic Value Cards (2x2 Grid) with Highlighted Borders & Hover Tint */}
+            {/* 4 Dynamic Value Cards (2x2 Grid) - Default highlighted look with rich interactive hover */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 flex-1">
               {CORE_VALUES.map((val, idx) => {
                 const Icon = val.icon;
@@ -182,7 +182,7 @@ export default function AboutSection({ onOpenStory }) {
                 return (
                   <div
                     key={idx}
-                    className={`bg-white hover:bg-brand-50/60 rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-brand-200 hover:border-brand-600 shadow-soft hover:shadow-xl hover:shadow-brand-500/20 hover:-translate-y-2 cursor-pointer flex flex-col justify-between group transition-all duration-300 ease-out ${
+                    className={`bg-white hover:bg-gradient-to-br hover:from-brand-50/90 hover:to-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-brand-500 hover:border-brand-600 hover:ring-4 hover:ring-brand-500/15 shadow-md shadow-brand-500/10 hover:shadow-2xl hover:shadow-brand-600/25 hover:-translate-y-2.5 cursor-pointer flex flex-col justify-between group transition-all duration-300 ease-out ${
                       delays[idx]
                     } ${
                       isVisible 
@@ -191,28 +191,30 @@ export default function AboutSection({ onOpenStory }) {
                     }`}
                   >
                     <div>
-                      {/* Top Row: Highlighted Icon & Highlighted Status Pill */}
+                      {/* Top Row: Default Solid Purple Icon & Solid Purple Badge */}
                       <div className="flex items-center justify-between mb-3.5">
-                        <div className="w-11 h-11 rounded-2xl bg-brand-100/80 text-brand-700 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-all duration-300 shadow-xs group-hover:scale-110 group-hover:shadow-md group-hover:shadow-brand-500/30">
-                          <Icon className="w-5 h-5 transition-transform duration-300 group-hover:rotate-3" />
+                        <div className="w-11 h-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center shadow-sm shadow-brand-600/30 transition-all duration-300 group-hover:scale-115 group-hover:rotate-6 group-hover:shadow-lg group-hover:shadow-brand-600/40">
+                          <Icon className="w-5 h-5" />
                         </div>
-                        <span className="text-[10px] sm:text-[11px] font-bold text-brand-700 bg-brand-50 group-hover:bg-brand-600 group-hover:text-white px-2.5 py-1 rounded-full border border-brand-200 group-hover:border-brand-600 transition-all duration-300 shadow-xs">
+
+                        {/* Status Badge: Solid Purple by default, crisp white on hover */}
+                        <span className="text-[10px] sm:text-[11px] font-extrabold text-white bg-brand-600 group-hover:bg-white group-hover:text-brand-700 px-3 py-1 rounded-full border border-brand-600 group-hover:border-brand-300 transition-all duration-300 shadow-xs group-hover:shadow-sm">
                           {val.stat}
                         </span>
                       </div>
 
-                      <h3 className="text-sm sm:text-base font-extrabold text-gray-900 group-hover:text-brand-600 transition-colors mb-1.5">
+                      <h3 className="text-sm sm:text-base font-extrabold text-brand-700 group-hover:text-brand-800 transition-colors mb-1.5">
                         {val.title}
                       </h3>
-                      <p className="text-xs text-gray-600 group-hover:text-gray-700 leading-relaxed transition-colors">
+                      <p className="text-xs text-gray-600 group-hover:text-gray-900 leading-relaxed transition-colors">
                         {val.desc}
                       </p>
                     </div>
 
-                    {/* Subtle Bottom Accent Indicator */}
-                    <div className="pt-3 mt-3 border-t border-brand-100/70 group-hover:border-brand-200 flex items-center justify-between text-[11px] text-brand-600/70 group-hover:text-brand-600 font-semibold transition-colors">
-                      <span>Verified Standard</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                    {/* Bottom Accent Indicator */}
+                    <div className="pt-3 mt-3 border-t border-brand-100 group-hover:border-brand-200 flex items-center justify-between text-[11px] text-brand-600 font-semibold transition-colors">
+                      <span className="group-hover:text-brand-700">Verified Standard</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-brand-600 group-hover:text-brand-700 transform group-hover:translate-x-1.5 group-hover:-translate-y-1.5 transition-transform duration-300" />
                     </div>
                   </div>
                 );
