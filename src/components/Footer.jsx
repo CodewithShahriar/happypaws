@@ -6,13 +6,13 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
     <footer className="pt-10 pb-12 bg-[#FAF7F2] relative">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
-        {/* Puppy & Kitten Banner Image sitting directly above dark container */}
-        <div className="relative max-w-2xl mx-auto -mb-6 z-10">
-          <div className="rounded-3xl overflow-hidden aspect-[16/9] w-full flex items-center justify-center">
+        {/* Puppy & Kitten Transparent Cutout sitting directly above dark container */}
+        <div className="relative max-w-xl sm:max-w-2xl mx-auto -mb-6 sm:-mb-8 z-10 px-4">
+          <div className="w-full flex items-center justify-center">
             <img
-              src="/images/puppy_kitten_footer_exact.jpg"
+              src="/images/puppy_kitten_footer_transparent.png"
               alt="Golden retriever puppy and fluffy kitten lying together"
-              className="w-full h-full object-contain pointer-events-none drop-shadow-md"
+              className="w-full max-h-[260px] sm:max-h-[340px] object-contain pointer-events-none drop-shadow-xl"
             />
           </div>
         </div>

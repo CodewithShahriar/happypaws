@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, ShieldCheck, FileText, HeartHandshake, Headphones } from 'lucide-react';
 
 const PROMISES = [
@@ -25,15 +25,42 @@ const PROMISES = [
 ];
 
 export default function GuaranteedPeace({ onOpenAdopt }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-16 lg:py-24 bg-[#FAF7F2] relative">
+    <section 
+      ref={sectionRef} 
+      className="py-16 lg:py-24 bg-[#FAF7F2] relative overflow-hidden"
+    >
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
 
-        {/* Exact Reference 3-Column Layout: Left Title/CTA + Center Doctor with Beagle + Right 4 Cards */}
+        {/* 3-Column Layout: Left Title/CTA + Center Doctor with Beagle + Right 4 Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
 
           {/* ================= LEFT: Title & CTA ================= */}
-          <div className="lg:col-span-3 xl:col-span-3 space-y-5 text-left">
+          <div 
+            className={`lg:col-span-3 xl:col-span-3 space-y-5 text-left transition-all duration-1000 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}
+          >
             <div className="inline-flex items-center gap-2 text-brand-600 text-xs font-bold tracking-wide uppercase">
               <span className="w-2 h-2 rounded-full bg-brand-600"></span>
               Our Promise To You
@@ -56,7 +83,11 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
           </div>
 
           {/* ================= CENTER: Transparent Doctor with Beagle ================= */}
-          <div className="lg:col-span-3 xl:col-span-4 flex items-center justify-center">
+          <div 
+            className={`lg:col-span-3 xl:col-span-4 flex items-center justify-center transition-all duration-1000 delay-200 ease-out ${
+              isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'
+            }`}
+          >
             <div className="relative w-full max-w-[300px] sm:max-w-[340px] xl:max-w-[380px]">
               <img
                 src="/images/vet_beagle_transparent.png"
@@ -66,23 +97,29 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
             </div>
           </div>
 
-          {/* ================= RIGHT: 4 Cards (2x2 Grid) with Prominent 2px Border & Hover ================= */}
+          {/* ================= RIGHT: 4 Cards (2x2 Grid) with In-Place Fade Reveal ================= */}
           <div className="lg:col-span-6 xl:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {PROMISES.map((item, idx) => {
               const Icon = item.icon;
+              const delays = ['delay-150', 'delay-300', 'delay-450', 'delay-600'];
+
               return (
                 <div
                   key={idx}
-                  className="group relative bg-white rounded-3xl p-5 sm:p-6 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/15 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between cursor-pointer overflow-hidden"
+                  className={`group relative bg-white hover:bg-brand-50/50 rounded-3xl p-5 sm:p-6 border-2 border-brand-300 hover:border-brand-500 shadow-soft hover:shadow-xl hover:shadow-brand-500/15 hover:-translate-y-2 transition-all duration-1000 ease-out flex flex-col justify-between cursor-pointer overflow-hidden ${
+                    delays[idx]
+                  } ${
+                    isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  }`}
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300 group-hover:scale-110 shadow-xs">
+                    <div className="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 border border-brand-200/90 flex items-center justify-center mb-4 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300 group-hover:scale-110 shadow-xs">
                       <Icon className="w-5 h-5" />
                     </div>
                     <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-700 leading-relaxed transition-colors">
                       {item.desc}
                     </p>
                   </div>
