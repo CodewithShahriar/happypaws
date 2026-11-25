@@ -97,7 +97,7 @@ export default function AboutSection({ onOpenStory }) {
           {/* ================= LEFT COLUMN: IN-PLACE PURE FADE-IN ================= */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div 
-              className={`relative bg-white rounded-3xl p-5 border-2 border-brand-500 shadow-md shadow-brand-500/10 transition-all duration-1200 ease-out flex flex-col justify-between h-full ${
+              className={`relative bg-white rounded-3xl p-5 border-2 border-brand-300 shadow-soft transition-all duration-1200 ease-out flex flex-col justify-between h-full ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'
               }`}
             >
@@ -182,7 +182,7 @@ export default function AboutSection({ onOpenStory }) {
                 return (
                   <div
                     key={idx}
-                    className={`bg-white hover:bg-gradient-to-br hover:from-brand-50/90 hover:to-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-brand-500 hover:border-brand-600 hover:ring-4 hover:ring-brand-500/15 shadow-md shadow-brand-500/10 hover:shadow-2xl hover:shadow-brand-600/25 hover:-translate-y-2.5 cursor-pointer flex flex-col justify-between group transition-all duration-300 ease-out ${
+                    className={`bg-white hover:bg-gradient-to-br hover:from-brand-50/90 hover:to-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-brand-300 hover:border-brand-500 hover:ring-4 hover:ring-brand-500/15 shadow-soft hover:shadow-2xl hover:shadow-brand-600/20 hover:-translate-y-2.5 cursor-pointer flex flex-col justify-between group transition-all duration-300 ease-out ${
                       delays[idx]
                     } ${
                       isVisible 
