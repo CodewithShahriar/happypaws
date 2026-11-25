@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Search, ShoppingBag, User, Menu, X } from 'lucide-react';
+import { Search, ShoppingBag, User, Menu, X, LogOut } from 'lucide-react';
 
-export default function Navbar({ onOpenCart, cartCount, onOpenSearch, onOpenAdopt, onOpenBooking }) {
+export default function Navbar({ 
+  onOpenCart, 
+  cartCount, 
+  onOpenSearch, 
+  onOpenAdopt, 
+  onOpenBooking,
+  user,
+  onOpenAuth,
+  onOpenProfile,
+  onLogout
+}) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -97,20 +107,48 @@ export default function Navbar({ onOpenCart, cartCount, onOpenSearch, onOpenAdop
               )}
             </button>
 
+            {/* User Profile Icon: clicking directly opens UserProfileModal when logged in, or AuthModal when logged out */}
             <button 
-              onClick={() => alert("HappyPaws User Profile & Settings")}
+              onClick={() => {
+                if (user) {
+                  onOpenProfile();
+                } else {
+                  onOpenAuth();
+                }
+              }}
               aria-label="Account"
-              className="text-[#111827] hover:text-brand-600 transition-colors p-1"
+              className="text-[#111827] hover:text-brand-600 transition-colors p-1 flex items-center justify-center group"
+              title={user ? `${user.name} (Click to open Profile Dashboard)` : "Account & Login"}
             >
-              <User className="w-5 h-5 stroke-[2.2]" />
+              {user && user.avatar ? (
+                <img 
+                  src={user.avatar} 
+                  alt={user.name} 
+                  className="w-7 h-7 rounded-full object-cover ring-2 ring-brand-400 group-hover:ring-brand-600 transition-all shadow-xs" 
+                />
+              ) : (
+                <User className="w-5 h-5 stroke-[2.2]" />
+              )}
             </button>
 
-            <button 
-              onClick={() => alert("HappyPaws Login")}
-              className="text-sm font-bold text-[#111827] hover:text-brand-600 transition-colors ml-1"
-            >
-              Log In
-            </button>
+            {/* Direct action button: "Log Out" when logged in, "Log In" when logged out */}
+            {user ? (
+              <button 
+                onClick={onLogout}
+                className="text-xs font-bold text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 border border-red-200/80 px-2.5 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ml-1 active:scale-95 shadow-2xs"
+                title="Log Out of Account"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                <span>Log Out</span>
+              </button>
+            ) : (
+              <button 
+                onClick={onOpenAuth}
+                className="text-sm font-bold text-[#111827] hover:text-brand-600 transition-colors ml-1"
+              >
+                Log In
+              </button>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -181,6 +219,27 @@ export default function Navbar({ onOpenCart, cartCount, onOpenSearch, onOpenAdop
             >
               Stories
             </a>
+
+            <div className="pt-2 border-t border-gray-200/60 px-3">
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (user) {
+                    onOpenProfile();
+                  } else {
+                    onOpenAuth();
+                  }
+                }}
+                className="w-full flex items-center gap-2 py-2 text-sm font-bold text-gray-700 hover:text-brand-600 transition-colors"
+              >
+                {user && user.avatar ? (
+                  <img src={user.avatar} alt={user.name} className="w-5 h-5 rounded-full object-cover ring-1 ring-brand-400" />
+                ) : (
+                  <User className="w-4 h-4" />
+                )}
+                <span>{user ? `${user.name} (My Profile)` : 'Log In / Create Account'}</span>
+              </button>
+            </div>
           </div>
         )}
 

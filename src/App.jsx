@@ -17,6 +17,8 @@ import AdoptionModal from './components/AdoptionModal';
 import BookingModal from './components/BookingModal';
 import SearchModal from './components/SearchModal';
 import StoryModal from './components/StoryModal';
+import AuthModal from './components/AuthModal';
+import UserProfileModal from './components/UserProfileModal';
 import Toast from './components/Toast';
 
 import { PETS, PRODUCTS } from './data/mockData';
@@ -48,7 +50,27 @@ export default function App() {
   const [bookingServiceTitle, setBookingServiceTitle] = useState('Veterinary Clinical Care');
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [storyModalOpen, setStoryModalOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [profileModalOpen, setProfileModalOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
   const [toast, setToast] = useState(null);
+
+  // Auth Handlers
+  const handleLoginSuccess = (user) => {
+    setCurrentUser(user);
+    setToast({
+      title: `Welcome, ${user.name.split(' ')[0]}! 🐾`,
+      message: "You are signed in to your HappyPaws account."
+    });
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setToast({
+      title: "Signed Out",
+      message: "You have signed out of your HappyPaws account."
+    });
+  };
 
   // Cart Handlers
   const handleAddToCart = (product) => {
@@ -137,6 +159,9 @@ export default function App() {
         onOpenSearch={() => setSearchModalOpen(true)}
         onOpenAdopt={handleOpenAdoptGeneral}
         onOpenBooking={() => handleOpenBooking()}
+        user={currentUser}
+        onOpenAuth={() => setAuthModalOpen(true)}
+        onOpenProfile={() => setProfileModalOpen(true)}
       />
 
       {/* Main Content Sections */}
@@ -225,6 +250,22 @@ export default function App() {
       <StoryModal
         isOpen={storyModalOpen}
         onClose={() => setStoryModalOpen(false)}
+      />
+
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
+
+      <UserProfileModal
+        isOpen={profileModalOpen}
+        onClose={() => setProfileModalOpen(false)}
+        user={currentUser}
+        onLogout={handleLogout}
+        onOpenCart={() => setCartOpen(true)}
+        onOpenBooking={handleOpenBooking}
+        onOpenAdopt={handleOpenAdoptGeneral}
       />
 
       <Toast
