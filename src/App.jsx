@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
+import AnimatedBackground from './components/AnimatedBackground';
 import Hero from './components/Hero';
 import BrandPartners from './components/BrandPartners';
 import AboutSection from './components/AboutSection';
@@ -125,7 +126,10 @@ export default function App() {
   const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-gray-900 font-sans selection:bg-brand-500 selection:text-white">
+    <div className="min-h-screen bg-[#FAF7F2] text-gray-900 font-sans selection:bg-brand-500 selection:text-white relative">
+      {/* Smooth Ambient Moving Background with Floating Pastel Orbs and Pet Doodles */}
+      <AnimatedBackground />
+
       {/* Top Navigation */}
       <Navbar
         cartCount={totalCartCount}

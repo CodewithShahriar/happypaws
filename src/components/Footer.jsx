@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer({ onOpenAdopt, onOpenBooking }) {
   return (
-    <footer className="pt-10 pb-12 bg-[#FAF7F2] relative">
+    <footer className="pt-10 pb-12 bg-transparent relative">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
         {/* Puppy & Kitten Transparent Cutout sitting directly above dark container */}

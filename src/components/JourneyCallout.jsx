@@ -3,7 +3,7 @@ import { ArrowUpRight, Send } from 'lucide-react';
 
 export default function JourneyCallout({ onOpenAdopt }) {
   return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-[#FAF7F2] relative overflow-hidden">
+    <section className="py-8 sm:py-12 lg:py-16 bg-transparent relative overflow-hidden">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
         {/* Outer relative wrapper so the bottom-left purple accent can hang below the card */}

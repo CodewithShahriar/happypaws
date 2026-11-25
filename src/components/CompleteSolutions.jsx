@@ -30,7 +30,7 @@ export default function CompleteSolutions({ onOpenBooking }) {
   const ActiveIcon = SERVICE_ICONS[activeService.id] || Stethoscope;
 
   return (
-    <section id="services" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F2] relative">
+    <section id="services" className="py-12 sm:py-16 lg:py-20 bg-transparent relative">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
         {/* Section Header */}

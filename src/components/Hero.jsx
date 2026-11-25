@@ -3,7 +3,7 @@ import { ArrowRight, Play, ShieldPlus, Star, CheckCircle2 } from 'lucide-react';
 
 export default function Hero({ onOpenAdopt, onOpenStory }) {
   return (
-    <section id="hero" className="relative bg-[#FAF7F2] min-h-0 lg:min-h-[calc(100vh-72px)] flex items-center justify-center overflow-hidden pt-1 pb-4 sm:pb-8 lg:py-0">
+    <section id="hero" className="relative bg-transparent min-h-0 lg:min-h-[calc(100vh-72px)] flex items-center justify-center overflow-hidden pt-1 pb-4 sm:pb-8 lg:py-0">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 relative">
         
         {/* Stage Container: On mobile flex-col with image on top; on lg relative with image on right */}

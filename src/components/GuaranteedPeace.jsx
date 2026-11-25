@@ -48,7 +48,7 @@ export default function GuaranteedPeace({ onOpenAdopt }) {
   return (
     <section 
       ref={sectionRef} 
-      className="py-16 lg:py-24 bg-[#FAF7F2] relative overflow-hidden"
+      className="py-16 lg:py-24 bg-transparent relative overflow-hidden"
     >
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
 

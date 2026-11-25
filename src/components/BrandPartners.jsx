@@ -40,7 +40,7 @@ const PARTNERS = [
 
 export default function BrandPartners() {
   return (
-    <section className="pt-0 pb-6 sm:pt-3 sm:pb-8 bg-[#FAF7F2] relative overflow-hidden">
+    <section className="pt-0 pb-6 sm:pt-3 sm:pb-8 bg-transparent relative overflow-hidden">
       <div className="w-full max-w-[1680px] mx-auto px-2 sm:px-8 md:px-12 lg:px-16">
         
         {/* Single Row 7-Brand Grid - Exactly all 7 in 1 line on mobile and desktop, zero scrollbar */}

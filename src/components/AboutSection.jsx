@@ -69,7 +69,7 @@ export default function AboutSection({ onOpenStory }) {
     <section 
       id="about" 
       ref={sectionRef} 
-      className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F2] relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 bg-transparent relative overflow-hidden"
     >
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         

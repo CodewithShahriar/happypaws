@@ -4,7 +4,7 @@ import { PRODUCTS } from '../data/mockData';
 
 export default function FeaturedShop({ onAddToCart }) {
   return (
-    <section id="shop" className="py-16 lg:py-20 bg-[#FAF7F2] relative">
+    <section id="shop" className="py-16 lg:py-20 bg-transparent relative">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
         {/* Section Header */}
@@ -38,7 +38,7 @@ export default function FeaturedShop({ onAddToCart }) {
           {PRODUCTS.slice(0, 6).map((prod) => (
             <div
               key={prod.id}
-              className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 lg:p-6 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              className="bg-white hover:bg-brand-50/20 rounded-2xl sm:rounded-3xl p-3 sm:p-5 lg:p-6 border-2 border-brand-300 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
             >
               <div>
                 {/* Product Transparent Image Container */}

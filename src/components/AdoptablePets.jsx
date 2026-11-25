@@ -27,7 +27,7 @@ export default function AdoptablePets({ onSelectPet }) {
   });
 
   return (
-    <section id="adopt" className="py-16 lg:py-24 bg-[#FAF7F2] relative">
+    <section id="adopt" className="py-16 lg:py-24 bg-transparent relative">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
         {/* Section Header */}
@@ -81,7 +81,7 @@ export default function AdoptablePets({ onSelectPet }) {
               <div
                 key={pet.id}
                 onClick={() => onSelectPet(pet)}
-                className={`group relative bg-white rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/15 hover:-translate-y-2 transition-all duration-300 cursor-pointer flex-col justify-between overflow-hidden ${
+                className={`group relative bg-white hover:bg-brand-50/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 border-2 border-brand-300 hover:border-brand-500 shadow-soft hover:shadow-2xl hover:shadow-brand-500/15 hover:-translate-y-2 transition-all duration-300 cursor-pointer flex-col justify-between overflow-hidden ${
                   isHiddenOnMobile ? 'hidden sm:flex' : 'flex'
                 }`}
               >
