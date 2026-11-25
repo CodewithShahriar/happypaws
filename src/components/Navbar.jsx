@@ -14,10 +14,27 @@ export default function Navbar({ onOpenCart, cartCount, onOpenSearch, onOpenAdop
   }, []);
 
   return (
-    <header className={`sticky top-0 z-40 transition-all duration-300 ${
-      isScrolled ? 'bg-[#FAF7F2]/95 backdrop-blur-md shadow-xs py-3.5' : 'bg-[#FAF7F2] py-4 sm:py-5'
+    <header className={`sticky top-0 z-40 transition-all duration-300 relative overflow-hidden ${
+      isScrolled 
+        ? 'bg-[#FAF7F2]/85 backdrop-blur-xl shadow-soft border-b border-brand-100/60 py-3 sm:py-3.5' 
+        : 'bg-[#FAF7F2]/70 backdrop-blur-md border-b border-transparent py-4 sm:py-5'
     }`}>
-      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
+      {/* Subtle moving ambient light in navbar */}
+      <div 
+        className="absolute inset-0 pointer-events-none overflow-hidden opacity-35 z-0"
+        aria-hidden="true"
+      >
+        <div 
+          className="absolute -top-12 left-1/4 w-80 h-24 rounded-full bg-[#DDD6FE]/50 blur-2xl"
+          style={{ animation: 'blob-drift-1 20s ease-in-out infinite' }}
+        />
+        <div 
+          className="absolute -top-12 right-1/4 w-80 h-24 rounded-full bg-[#FDE68A]/50 blur-2xl"
+          style={{ animation: 'blob-drift-2 24s ease-in-out infinite' }}
+        />
+      </div>
+
+      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 relative z-10">
         <div className="flex items-center justify-between">
           
           {/* Logo (matching 2nd screenshot: black paw icon + bold text) */}
