@@ -60,17 +60,21 @@ export default function FeaturedShop({ onAddToCart }) {
               </div>
 
               {/* Price & Action Button */}
-              <div className="flex items-center justify-between pt-2.5 sm:pt-4 border-t border-gray-100">
-                <div className="font-extrabold text-xs sm:text-base lg:text-lg text-gray-900">
+              <div className="flex items-center justify-between pt-2.5 sm:pt-4 border-t border-gray-100 gap-2">
+                <div className="font-extrabold text-sm sm:text-base lg:text-lg text-gray-900 shrink-0">
                   {prod.currency}{prod.price.toFixed(2)}
                 </div>
 
                 <button
-                  onClick={() => onAddToCart(prod)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onAddToCart(prod);
+                  }}
                   aria-label={`Add ${prod.name} to cart`}
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-600 hover:bg-brand-700 text-white flex items-center justify-center shadow-sm hover:shadow-purple-glow transition-all transform active:scale-95 shrink-0"
+                  className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-[11px] sm:text-xs rounded-full shadow-sm hover:shadow-purple-glow transition-all transform active:scale-95 shrink-0"
                 >
                   <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span>Add to Bag</span>
                 </button>
               </div>
             </div>
