@@ -12,7 +12,7 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
             <img
               src="/images/puppy_kitten_footer_transparent.png"
               alt="Golden retriever puppy and fluffy kitten lying together"
-              className="w-full max-h-[260px] sm:max-h-[340px] object-contain pointer-events-none drop-shadow-xl"
+              className="w-full max-h-[260px] sm:max-h-[340px] object-contain pointer-events-none select-none"
             />
           </div>
         </div>
