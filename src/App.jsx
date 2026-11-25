@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Lenis from 'lenis';
 import Navbar from './components/Navbar';
+import CustomCursor from './components/CustomCursor';
 import AnimatedBackground from './components/AnimatedBackground';
 import Hero from './components/Hero';
 import BrandPartners from './components/BrandPartners';
@@ -54,6 +56,61 @@ export default function App() {
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [toast, setToast] = useState(null);
+
+  // Lenis Smooth Scroll Instance
+  const lenisRef = useRef(null);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      touchMultiplier: 1.8,
+      infinite: false,
+    });
+    lenisRef.current = lenis;
+
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
+
+    // Smooth scroll for in-page anchor links
+    const handleAnchorClick = (e) => {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (anchor) {
+        const href = anchor.getAttribute('href');
+        if (href && href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            lenis.scrollTo(target, { offset: -60, duration: 1.2 });
+          }
+        }
+      }
+    };
+    document.addEventListener('click', handleAnchorClick);
+
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
+
+  // Pause Lenis scrolling when modals are open
+  const isAnyModalOpen = cartOpen || adoptModalOpen || bookingModalOpen || searchModalOpen || storyModalOpen || authModalOpen || profileModalOpen;
+  useEffect(() => {
+    if (lenisRef.current) {
+      if (isAnyModalOpen) {
+        lenisRef.current.stop();
+      } else {
+        lenisRef.current.start();
+      }
+    }
+  }, [isAnyModalOpen]);
 
   // Auth Handlers
   const handleLoginSuccess = (user) => {
@@ -149,6 +206,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FAF7F2] text-gray-900 font-sans selection:bg-brand-500 selection:text-white relative">
+      {/* Interactive Custom Cursor Follower Effect */}
+      <CustomCursor />
+
       {/* Smooth Ambient Moving Background with Floating Pastel Orbs and Pet Doodles */}
       <AnimatedBackground />
 
@@ -162,6 +222,7 @@ export default function App() {
         user={currentUser}
         onOpenAuth={() => setAuthModalOpen(true)}
         onOpenProfile={() => setProfileModalOpen(true)}
+        onLogout={handleLogout}
       />
 
       {/* Main Content Sections */}

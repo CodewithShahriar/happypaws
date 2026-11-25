@@ -220,25 +220,42 @@ export default function Navbar({
               Stories
             </a>
 
-            <div className="pt-2 border-t border-gray-200/60 px-3">
-              <button 
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (user) {
-                    onOpenProfile();
-                  } else {
+            <div className="pt-2 border-t border-gray-200/60 px-3 space-y-1">
+              {user ? (
+                <div className="flex items-center justify-between py-1.5">
+                  <button 
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenProfile();
+                    }}
+                    className="flex items-center gap-2 text-sm font-bold text-gray-800 hover:text-brand-600 transition-colors"
+                  >
+                    <img src={user.avatar} alt={user.name} className="w-6 h-6 rounded-full object-cover ring-1 ring-brand-400" />
+                    <span>{user.name}</span>
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onLogout();
+                    }}
+                    className="text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg border border-red-200 flex items-center gap-1 transition-colors"
+                  >
+                    <LogOut className="w-3.5 h-3.5" />
+                    <span>Log Out</span>
+                  </button>
+                </div>
+              ) : (
+                <button 
+                  onClick={() => {
+                    setMobileMenuOpen(false);
                     onOpenAuth();
-                  }
-                }}
-                className="w-full flex items-center gap-2 py-2 text-sm font-bold text-gray-700 hover:text-brand-600 transition-colors"
-              >
-                {user && user.avatar ? (
-                  <img src={user.avatar} alt={user.name} className="w-5 h-5 rounded-full object-cover ring-1 ring-brand-400" />
-                ) : (
+                  }}
+                  className="w-full flex items-center gap-2 py-2 text-sm font-bold text-gray-700 hover:text-brand-600 transition-colors"
+                >
                   <User className="w-4 h-4" />
-                )}
-                <span>{user ? `${user.name} (My Profile)` : 'Log In / Create Account'}</span>
-              </button>
+                  <span>Log In / Create Account</span>
+                </button>
+              )}
             </div>
           </div>
         )}
