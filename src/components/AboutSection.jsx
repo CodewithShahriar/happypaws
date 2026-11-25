@@ -219,21 +219,21 @@ export default function AboutSection({ onOpenStory }) {
               })}
             </div>
 
-            {/* Impact Metric Strip: Highlighted Border & Hover Tint */}
+            {/* Impact Metric Strip: Rich Brand Purple Background & Crisp White Text */}
             <div 
-              className={`bg-white hover:bg-brand-50/40 rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-brand-200 hover:border-brand-500 shadow-soft hover:shadow-lg transition-all duration-1000 delay-1000 ease-out ${
+              className={`bg-brand-600 hover:bg-brand-700 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border-2 border-brand-700 shadow-purple-glow hover:shadow-xl hover:shadow-brand-600/25 transition-all duration-1000 delay-1000 ease-out hover:-translate-y-0.5 ${
                 isVisible 
                   ? 'translate-x-0 opacity-100' 
                   : 'translate-x-16 sm:translate-x-24 opacity-0'
               }`}
             >
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-brand-100">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/20">
                 {IMPACT_STATS.map((stat, idx) => (
-                  <div key={idx} className={`${idx > 0 ? 'pt-2 sm:pt-0 sm:pl-3 lg:pl-4' : ''}`}>
-                    <div className="text-xl sm:text-2xl font-extrabold text-brand-600 tracking-tight leading-tight">
+                  <div key={idx} className={`${idx > 0 ? 'pt-2 sm:pt-0 sm:pl-3 lg:pl-5' : ''}`}>
+                    <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight drop-shadow-xs">
                       {stat.value}
                     </div>
-                    <div className="text-[11px] sm:text-xs font-semibold text-gray-500 mt-0.5">
+                    <div className="text-xs sm:text-sm font-medium text-brand-100/90 mt-1">
                       {stat.label}
                     </div>
                   </div>
