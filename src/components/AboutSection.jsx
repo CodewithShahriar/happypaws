@@ -97,12 +97,12 @@ export default function AboutSection({ onOpenStory }) {
           {/* ================= LEFT COLUMN: IN-PLACE PURE FADE-IN ================= */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div 
-              className={`relative bg-white hover:bg-brand-50/30 rounded-3xl p-5 border-2 border-brand-200/90 hover:border-brand-500 shadow-soft hover:shadow-xl hover:shadow-brand-500/10 transition-all duration-1200 ease-out flex flex-col justify-between h-full group ${
+              className={`relative bg-white rounded-3xl p-5 border-2 border-brand-500 shadow-md shadow-brand-500/10 transition-all duration-1200 ease-out flex flex-col justify-between h-full ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'
               }`}
             >
               
-              {/* Doctor & Rescued Pet Image (Fades in in-place slowly) */}
+              {/* Doctor & Rescued Pet Image (Fades in in-place slowly, no hover scale) */}
               <div 
                 className={`relative rounded-2xl overflow-hidden h-64 sm:h-72 lg:h-80 w-full bg-brand-50/60 mb-4 transition-all duration-1200 delay-200 ease-out border border-brand-100 ${
                   isVisible ? 'opacity-100' : 'opacity-0'
@@ -111,7 +111,7 @@ export default function AboutSection({ onOpenStory }) {
                 <img
                   src="/images/about_vet_care.jpg"
                   alt="Dr. Patricia Santos holding a rescued puppy and kitten"
-                  className="w-full h-full object-cover object-[center_25%] group-hover:scale-104 transition-transform duration-700"
+                  className="w-full h-full object-cover object-[center_25%]"
                 />
 
                 {/* Floating Verified Care Badge */}
@@ -132,9 +132,9 @@ export default function AboutSection({ onOpenStory }) {
                 )}
               </div>
 
-              {/* Doctor Details & Concise Quote */}
+              {/* Doctor Details & Concise Quote (Clean static look, no card hover effect) */}
               <div 
-                className={`bg-[#FAF7F2]/90 rounded-2xl p-4 border border-brand-200/80 group-hover:border-brand-300 transition-all duration-1200 delay-400 ease-out ${
+                className={`bg-[#FAF7F2]/90 rounded-2xl p-4 border border-brand-200/80 transition-all duration-1200 delay-400 ease-out ${
                   isVisible ? 'opacity-100' : 'opacity-0'
                 }`}
               >
