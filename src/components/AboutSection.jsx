@@ -1,5 +1,14 @@
-import React from 'react';
-import { ArrowUpRight, Heart, ShieldCheck, Stethoscope, Building2, Sparkles, Star, Play } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { 
+  ArrowUpRight, 
+  Heart, 
+  ShieldCheck, 
+  Stethoscope, 
+  Building2, 
+  Sparkles, 
+  Star, 
+  Play 
+} from 'lucide-react';
 
 const CORE_VALUES = [
   {
@@ -36,12 +45,40 @@ const IMPACT_STATS = [
 ];
 
 export default function AboutSection({ onOpenStory }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="py-10 sm:py-14 lg:py-16 bg-[#FAF7F2] relative">
+    <section 
+      id="about" 
+      ref={sectionRef} 
+      className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F2] relative overflow-hidden"
+    >
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
-        {/* Section Header: Clean, Typographic & Purposeful */}
-        <div className="max-w-2xl mb-8 sm:mb-10">
+        {/* Section Header: In-Place Smooth Fade-In */}
+        <div 
+          className={`max-w-2xl mb-8 sm:mb-12 transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+          }`}
+        >
           <div className="inline-flex items-center gap-2 text-brand-600 text-xs font-bold tracking-wide uppercase mb-2">
             <span className="w-2 h-2 rounded-full bg-brand-600"></span>
             About HappyPaws
@@ -54,19 +91,27 @@ export default function AboutSection({ onOpenStory }) {
           </p>
         </div>
 
-        {/* 2-Column Balanced & Compact Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-stretch">
+        {/* 2-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
-          {/* Left Column: Visual Story Card (Photo + Floating Vet Badge + Quote) */}
-          <div className="lg:col-span-5 flex flex-col">
-            <div className="relative bg-white rounded-3xl p-4 sm:p-5 border border-amber-100/80 shadow-soft overflow-hidden flex flex-col justify-between h-full group">
+          {/* ================= LEFT COLUMN: IN-PLACE PURE FADE-IN ================= */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div 
+              className={`relative bg-white rounded-3xl p-5 border-2 border-amber-100/90 hover:border-brand-400 shadow-soft hover:shadow-md transition-all duration-1000 ease-out flex flex-col justify-between h-full group ${
+                isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'
+              }`}
+            >
               
-              {/* Doctor & Rescued Pet Image */}
-              <div className="relative rounded-2xl overflow-hidden h-64 sm:h-72 lg:h-80 w-full bg-brand-50/60 mb-4">
+              {/* Doctor & Rescued Pet Image (Fades in in-place) */}
+              <div 
+                className={`relative rounded-2xl overflow-hidden h-64 sm:h-72 lg:h-80 w-full bg-brand-50/60 mb-4 transition-all duration-1000 delay-150 ease-out ${
+                  isVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
                 <img
                   src="/images/about_vet_care.jpg"
                   alt="Dr. Patricia Santos holding a rescued puppy and kitten"
-                  className="w-full h-full object-cover object-[center_25%] group-hover:scale-103 transition-transform duration-500"
+                  className="w-full h-full object-cover object-[center_25%] group-hover:scale-103 transition-transform duration-700"
                 />
 
                 {/* Floating Verified Care Badge */}
@@ -79,7 +124,7 @@ export default function AboutSection({ onOpenStory }) {
                 {onOpenStory && (
                   <button
                     onClick={onOpenStory}
-                    className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-600/95 hover:bg-brand-600 text-white text-xs font-semibold shadow-md backdrop-blur-md transition-all hover:scale-105"
+                    className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-600/95 hover:bg-brand-600 text-white text-xs font-semibold shadow-md backdrop-blur-md transition-all hover:scale-105 active:scale-95"
                   >
                     <Play className="w-3 h-3 fill-white" />
                     <span>Watch Story</span>
@@ -87,14 +132,18 @@ export default function AboutSection({ onOpenStory }) {
                 )}
               </div>
 
-              {/* Doctor Details & Concise Quote */}
-              <div className="bg-[#FAF7F2]/70 rounded-2xl p-3.5 sm:p-4 border border-amber-100/50">
-                <div className="flex items-center justify-between gap-3 mb-2">
+              {/* Doctor Details & Concise Quote (In-place fade-in with gentle delay) */}
+              <div 
+                className={`bg-[#FAF7F2]/80 rounded-2xl p-4 border border-amber-100/70 transition-all duration-1000 delay-300 ease-out ${
+                  isVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-3 mb-2.5">
                   <div className="flex items-center gap-2.5">
                     <img
                       src="/images/about_vet_avatar.jpg"
                       alt="Dr. Patricia Santos, DVM"
-                      className="w-9 h-9 rounded-full object-cover border border-brand-200"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-brand-200"
                     />
                     <div>
                       <h4 className="text-xs sm:text-sm font-bold text-gray-900 leading-tight">
@@ -108,7 +157,7 @@ export default function AboutSection({ onOpenStory }) {
 
                   <div className="flex items-center gap-0.5 text-amber-500">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
                 </div>
@@ -121,24 +170,33 @@ export default function AboutSection({ onOpenStory }) {
             </div>
           </div>
 
-          {/* Right Column: 4 Concise Value Cards (2x2) + Sleek Impact Metrics Strip */}
+          {/* ================= RIGHT COLUMN: SMOOTH SLIDE-IN FROM RIGHT ================= */}
           <div className="lg:col-span-7 flex flex-col justify-between gap-4">
             
-            {/* 4 Value Pillars: 2x2 Grid with Clean Modern Cards */}
+            {/* 4 Dynamic Value Cards (2x2 Grid) with Staggered Slide-In from Right */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 flex-1">
               {CORE_VALUES.map((val, idx) => {
                 const Icon = val.icon;
+                const delays = ['delay-100', 'delay-200', 'delay-300', 'delay-400'];
+
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-amber-100/80 hover:border-brand-300 shadow-soft hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                    className={`bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-amber-100/90 hover:border-brand-500 shadow-soft hover:shadow-xl hover:shadow-brand-500/10 hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between group transition-all duration-700 ease-out ${
+                      delays[idx]
+                    } ${
+                      isVisible 
+                        ? 'translate-x-0 opacity-100' 
+                        : 'translate-x-8 sm:translate-x-12 opacity-0'
+                    }`}
                   >
                     <div>
+                      {/* Top Row: Icon & Status Pill */}
                       <div className="flex items-center justify-between mb-3">
-                        <div className="w-9 h-9 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300 shadow-xs">
-                          <Icon className="w-4.5 h-4.5" />
+                        <div className="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-all duration-300 shadow-xs group-hover:scale-105">
+                          <Icon className="w-5 h-5" />
                         </div>
-                        <span className="text-[10px] sm:text-[11px] font-bold text-brand-700 bg-brand-50/80 px-2.5 py-0.5 rounded-full border border-brand-100/60">
+                        <span className="text-[10px] sm:text-[11px] font-bold text-brand-700 bg-brand-50/80 group-hover:bg-brand-500 group-hover:text-white px-2.5 py-0.5 rounded-full border border-brand-100/60 transition-colors duration-300">
                           {val.stat}
                         </span>
                       </div>
@@ -150,13 +208,25 @@ export default function AboutSection({ onOpenStory }) {
                         {val.desc}
                       </p>
                     </div>
+
+                    {/* Subtle Bottom Accent Indicator */}
+                    <div className="pt-3 mt-2 border-t border-gray-50 flex items-center justify-between text-[11px] text-gray-400 group-hover:text-brand-600 transition-colors">
+                      <span className="font-semibold">Verified Standard</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* Impact Metric Strip: Compact, Clean, Unified */}
-            <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-amber-100/80 shadow-soft">
+            {/* Impact Metric Strip: Staggered Slide-In from Right */}
+            <div 
+              className={`bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-amber-100/90 hover:border-brand-400 shadow-soft transition-all duration-700 delay-500 ease-out ${
+                isVisible 
+                  ? 'translate-x-0 opacity-100' 
+                  : 'translate-x-8 sm:translate-x-12 opacity-0'
+              }`}
+            >
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
                 {IMPACT_STATS.map((stat, idx) => (
                   <div key={idx} className={`${idx > 0 ? 'pt-2 sm:pt-0 sm:pl-3 lg:pl-4' : ''}`}>
