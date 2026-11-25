@@ -97,14 +97,14 @@ export default function AboutSection({ onOpenStory }) {
           {/* ================= LEFT COLUMN: IN-PLACE PURE FADE-IN ================= */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div 
-              className={`relative bg-white rounded-3xl p-5 border-2 border-amber-100/90 hover:border-brand-400 shadow-soft hover:shadow-md transition-all duration-1000 ease-out flex flex-col justify-between h-full group ${
+              className={`relative bg-white hover:bg-brand-50/15 rounded-3xl p-5 border-2 border-gray-200 hover:border-brand-400 shadow-soft hover:shadow-md transition-all duration-1200 ease-out flex flex-col justify-between h-full group ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'
               }`}
             >
               
-              {/* Doctor & Rescued Pet Image (Fades in in-place) */}
+              {/* Doctor & Rescued Pet Image (Fades in in-place slowly) */}
               <div 
-                className={`relative rounded-2xl overflow-hidden h-64 sm:h-72 lg:h-80 w-full bg-brand-50/60 mb-4 transition-all duration-1000 delay-150 ease-out ${
+                className={`relative rounded-2xl overflow-hidden h-64 sm:h-72 lg:h-80 w-full bg-brand-50/60 mb-4 transition-all duration-1200 delay-200 ease-out ${
                   isVisible ? 'opacity-100' : 'opacity-0'
                 }`}
               >
@@ -134,7 +134,7 @@ export default function AboutSection({ onOpenStory }) {
 
               {/* Doctor Details & Concise Quote (In-place fade-in with gentle delay) */}
               <div 
-                className={`bg-[#FAF7F2]/80 rounded-2xl p-4 border border-amber-100/70 transition-all duration-1000 delay-300 ease-out ${
+                className={`bg-[#FAF7F2]/90 rounded-2xl p-4 border border-gray-200/80 transition-all duration-1200 delay-400 ease-out ${
                   isVisible ? 'opacity-100' : 'opacity-0'
                 }`}
               >
@@ -170,24 +170,24 @@ export default function AboutSection({ onOpenStory }) {
             </div>
           </div>
 
-          {/* ================= RIGHT COLUMN: SMOOTH SLIDE-IN FROM RIGHT ================= */}
+          {/* ================= RIGHT COLUMN: SMOOTH SLOW SLIDE-IN FROM RIGHT ================= */}
           <div className="lg:col-span-7 flex flex-col justify-between gap-4">
             
-            {/* 4 Dynamic Value Cards (2x2 Grid) with Staggered Slide-In from Right */}
+            {/* 4 Dynamic Value Cards (2x2 Grid) with Staggered Slow Slide-In from Right */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 flex-1">
               {CORE_VALUES.map((val, idx) => {
                 const Icon = val.icon;
-                const delays = ['delay-100', 'delay-200', 'delay-300', 'delay-400'];
+                const delays = ['delay-200', 'delay-400', 'delay-600', 'delay-800'];
 
                 return (
                   <div
                     key={idx}
-                    className={`bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-amber-100/90 hover:border-brand-500 shadow-soft hover:shadow-xl hover:shadow-brand-500/10 hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between group transition-all duration-700 ease-out ${
+                    className={`bg-white hover:bg-brand-50/40 rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-gray-200 hover:border-brand-500 shadow-soft hover:shadow-xl hover:shadow-brand-500/15 hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between group transition-all duration-1000 ease-out ${
                       delays[idx]
                     } ${
                       isVisible 
                         ? 'translate-x-0 opacity-100' 
-                        : 'translate-x-8 sm:translate-x-12 opacity-0'
+                        : 'translate-x-16 sm:translate-x-24 opacity-0'
                     }`}
                   >
                     <div>
@@ -196,7 +196,7 @@ export default function AboutSection({ onOpenStory }) {
                         <div className="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-all duration-300 shadow-xs group-hover:scale-105">
                           <Icon className="w-5 h-5" />
                         </div>
-                        <span className="text-[10px] sm:text-[11px] font-bold text-brand-700 bg-brand-50/80 group-hover:bg-brand-500 group-hover:text-white px-2.5 py-0.5 rounded-full border border-brand-100/60 transition-colors duration-300">
+                        <span className="text-[10px] sm:text-[11px] font-bold text-brand-700 bg-brand-50/90 group-hover:bg-brand-500 group-hover:text-white px-2.5 py-0.5 rounded-full border border-brand-200 group-hover:border-brand-500 transition-colors duration-300">
                           {val.stat}
                         </span>
                       </div>
@@ -210,7 +210,7 @@ export default function AboutSection({ onOpenStory }) {
                     </div>
 
                     {/* Subtle Bottom Accent Indicator */}
-                    <div className="pt-3 mt-2 border-t border-gray-50 flex items-center justify-between text-[11px] text-gray-400 group-hover:text-brand-600 transition-colors">
+                    <div className="pt-3 mt-2 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400 group-hover:text-brand-600 transition-colors">
                       <span className="font-semibold">Verified Standard</span>
                       <ArrowUpRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
@@ -219,12 +219,12 @@ export default function AboutSection({ onOpenStory }) {
               })}
             </div>
 
-            {/* Impact Metric Strip: Staggered Slide-In from Right */}
+            {/* Impact Metric Strip: Staggered Slow Slide-In from Right */}
             <div 
-              className={`bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-amber-100/90 hover:border-brand-400 shadow-soft transition-all duration-700 delay-500 ease-out ${
+              className={`bg-white hover:bg-brand-50/20 rounded-2xl sm:rounded-3xl p-4 sm:p-5 border-2 border-gray-200 hover:border-brand-400 shadow-soft transition-all duration-1000 delay-1000 ease-out ${
                 isVisible 
                   ? 'translate-x-0 opacity-100' 
-                  : 'translate-x-8 sm:translate-x-12 opacity-0'
+                  : 'translate-x-16 sm:translate-x-24 opacity-0'
               }`}
             >
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">

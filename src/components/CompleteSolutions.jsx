@@ -82,19 +82,19 @@ export default function CompleteSolutions({ onOpenBooking }) {
                   <div
                     key={srv.id}
                     onClick={() => setActiveServiceId(srv.id)}
-                    className={`group rounded-2xl p-3.5 sm:p-4 transition-all duration-300 cursor-pointer border ${
+                    className={`group rounded-2xl p-3.5 sm:p-4 transition-all duration-300 cursor-pointer border-2 ${
                       isActive
-                        ? 'bg-white border-brand-500 shadow-md ring-2 ring-brand-500/10'
-                        : 'bg-white/80 hover:bg-white border-amber-100/80 hover:border-brand-200 shadow-xs hover:shadow-soft'
+                        ? 'bg-brand-50/70 border-brand-600 shadow-md ring-2 ring-brand-500/20 -translate-y-0.5'
+                        : 'bg-white hover:bg-brand-50/40 border-gray-200 hover:border-brand-500 shadow-xs hover:shadow-md hover:-translate-y-0.5'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3 min-w-0">
                         {/* Service Icon */}
-                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
                           isActive
-                            ? 'bg-brand-600 text-white shadow-xs'
-                            : 'bg-brand-50 text-brand-600 group-hover:bg-brand-100'
+                            ? 'bg-brand-600 text-white shadow-xs scale-105'
+                            : 'bg-brand-50 text-brand-600 group-hover:bg-brand-600 group-hover:text-white group-hover:scale-105'
                         }`}>
                           <Icon className="w-5 h-5" />
                         </div>
@@ -102,11 +102,13 @@ export default function CompleteSolutions({ onOpenBooking }) {
                         {/* Title & Short Tagline */}
                         <div className="min-w-0">
                           <h3 className={`text-sm sm:text-base font-bold transition-colors truncate ${
-                            isActive ? 'text-brand-600' : 'text-gray-900 group-hover:text-brand-600'
+                            isActive ? 'text-brand-700' : 'text-gray-900 group-hover:text-brand-600'
                           }`}>
                             {srv.title}
                           </h3>
-                          <p className="text-[11px] sm:text-xs text-gray-500 line-clamp-1">
+                          <p className={`text-[11px] sm:text-xs line-clamp-1 transition-colors ${
+                            isActive ? 'text-brand-600 font-medium' : 'text-gray-500 group-hover:text-gray-600'
+                          }`}>
                             {srv.badge || 'Professional Care'}
                           </p>
                         </div>
@@ -114,15 +116,15 @@ export default function CompleteSolutions({ onOpenBooking }) {
 
                       {/* Right Indicator */}
                       <div className="shrink-0 flex items-center gap-1.5">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors ${
                           isActive
-                            ? 'bg-brand-50 text-brand-700 border border-brand-200/60'
-                            : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200/60'
+                            ? 'bg-brand-600 text-white border border-brand-600'
+                            : 'bg-gray-100 text-gray-600 group-hover:bg-brand-100 group-hover:text-brand-700 border border-gray-200 group-hover:border-brand-200'
                         }`}>
                           {srv.badge}
                         </span>
                         <ArrowUpRight className={`w-3.5 h-3.5 transition-transform ${
-                          isActive ? 'text-brand-600 translate-x-0.5 -translate-y-0.5' : 'text-gray-300 group-hover:text-gray-500'
+                          isActive ? 'text-brand-600 translate-x-0.5 -translate-y-0.5' : 'text-gray-400 group-hover:text-brand-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5'
                         }`} />
                       </div>
                     </div>
@@ -132,7 +134,7 @@ export default function CompleteSolutions({ onOpenBooking }) {
             </div>
 
             {/* Bottom Trust Guarantee Strip */}
-            <div className="bg-white rounded-2xl p-3.5 sm:p-4 border border-amber-100/80 shadow-soft">
+            <div className="bg-white hover:bg-brand-50/20 rounded-2xl p-3.5 sm:p-4 border-2 border-gray-200 hover:border-brand-300 shadow-soft transition-all duration-300">
               <div className="grid grid-cols-3 gap-2 text-center divide-x divide-gray-100 text-[11px]">
                 <div className="flex flex-col items-center gap-0.5">
                   <ShieldCheck className="w-4 h-4 text-brand-600" />
@@ -157,7 +159,7 @@ export default function CompleteSolutions({ onOpenBooking }) {
 
           {/* ================= RIGHT COLUMN: Hero Visual Showcase (7 Cols) ================= */}
           <div className="lg:col-span-7 flex flex-col justify-between">
-            <div className="bg-white rounded-3xl p-5 sm:p-6 border border-amber-100/80 shadow-soft h-full flex flex-col justify-between group">
+            <div className="bg-white rounded-3xl p-5 sm:p-6 border-2 border-gray-200 hover:border-brand-300 shadow-soft h-full flex flex-col justify-between group transition-all duration-300">
               
               {/* Top: Sunlit Modern Veterinary Clinic Image */}
               <div className="relative rounded-2xl overflow-hidden h-56 sm:h-64 lg:h-72 w-full bg-brand-50 mb-5">
