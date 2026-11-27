@@ -188,39 +188,39 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
     : extendedServices.filter(s => s.category === activeCategory);
 
   return (
-    <div className="py-8 sm:py-12">
-      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 space-y-16 sm:space-y-24">
+    <div className="py-6 sm:py-10 lg:py-12">
+      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-20 lg:space-y-24">
         
         {/* Hero Section with Blended Clinical Image */}
         <div className="relative rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-purple-50/70 via-white to-brand-50/50 border-2 border-brand-200/80 shadow-soft overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center min-h-[380px] lg:min-h-[440px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 z-10 relative">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-5">
+            <div className="lg:col-span-7 p-6 sm:p-10 lg:p-16 z-10 relative">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
                 <Stethoscope className="w-3.5 h-3.5" />
                 <span>HappyPaws Clinical Excellence</span>
               </div>
               
-              <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
+              <h1 className="text-2xl sm:text-4xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
                 Full-Spectrum Veterinary Care & Luxury Pet Wellness.
               </h1>
               
-              <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed font-normal max-w-xl">
+              <p className="mt-4 sm:mt-6 text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed font-normal max-w-xl">
                 From routine health exams and sterile surgical suites to fear-free hygiene spa grooming and climate-controlled boarding suites, our licensed veterinarians treat every companion like family.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <button
                   onClick={() => onOpenBooking('Veterinary Clinical Care')}
-                  className="px-7 py-3.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md hover:shadow-brand-500/25 transition-all flex items-center gap-2 group active:scale-95 cursor-pointer"
+                  className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-brand-500/25 transition-all flex items-center justify-center gap-2 group active:scale-95 cursor-pointer"
                 >
                   <span>Book Clinical Care</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
                   onClick={() => onNavigate('adopt')}
-                  className="px-7 py-3.5 rounded-2xl bg-white hover:bg-gray-50 text-gray-800 font-bold text-sm border-2 border-gray-200 hover:border-brand-300 transition-all active:scale-95 cursor-pointer"
+                  className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-white hover:bg-gray-50 text-gray-800 font-bold text-xs sm:text-sm border-2 border-gray-200 hover:border-brand-300 transition-all active:scale-95 cursor-pointer text-center"
                 >
                   Adopt a Companion
                 </button>
@@ -228,7 +228,7 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
             </div>
 
             {/* Right Column: Blended Clinic Image */}
-            <div className="lg:col-span-5 relative h-72 sm:h-96 lg:h-full min-h-[320px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
+            <div className="lg:col-span-5 relative h-64 sm:h-80 lg:h-full min-h-[260px] sm:min-h-[360px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
               {/* Left blend gradient */}
               <div className="absolute inset-y-0 left-0 w-24 sm:w-36 z-10 pointer-events-none hidden lg:block bg-gradient-to-r from-white via-white/80 to-transparent" />
               {/* Top fade for mobile */}
@@ -246,13 +246,13 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
               />
 
               {/* Floating Quality Badge */}
-              <div className="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md border border-brand-200/80 rounded-2xl p-3 shadow-lg flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-brand-600 text-white flex items-center justify-center">
-                  <ShieldCheck className="w-4 h-4" />
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 bg-white/95 backdrop-blur-md border border-brand-200/80 rounded-2xl p-2.5 sm:p-3 shadow-lg flex items-center gap-2 sm:gap-2.5">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-brand-600 text-white flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-900 leading-tight">Fear-Free Certified</p>
-                  <p className="text-[10px] text-emerald-600 font-semibold">24/7 Emergency ICU</p>
+                  <p className="text-[11px] sm:text-xs font-bold text-gray-900 leading-tight">Fear-Free Certified</p>
+                  <p className="text-[9px] sm:text-[10px] text-emerald-600 font-semibold">24/7 Emergency ICU</p>
                 </div>
               </div>
             </div>
@@ -262,9 +262,9 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
 
         {/* Category Filters */}
         <div>
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#111827] tracking-tight">
+              <h2 className="text-xl sm:text-3xl font-black text-[#111827] tracking-tight">
                 Our Specialized Services
               </h2>
               <p className="text-xs sm:text-sm text-gray-500 mt-1">
@@ -272,7 +272,7 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2 bg-gray-100/80 p-1.5 rounded-2xl border border-gray-200">
+            <div className="flex items-center gap-2 bg-gray-100/80 p-1.5 rounded-2xl border border-gray-200 overflow-x-auto max-w-full scrollbar-none">
               {[
                 { id: 'all', label: 'All Services' },
                 { id: 'clinical', label: 'Clinical & Diagnostics' },
@@ -283,7 +283,7 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                  className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all shrink-0 cursor-pointer ${
                     activeCategory === cat.id
                       ? 'bg-white text-brand-600 shadow-xs'
                       : 'text-gray-600 hover:text-gray-900'
@@ -302,19 +302,19 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
               return (
                 <div
                   key={service.id}
-                  className="rounded-3xl bg-white border-2 border-brand-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-soft hover:border-brand-400 hover:shadow-md transition-all group"
+                  className="rounded-3xl bg-white border-2 border-brand-200/80 p-5 sm:p-7 lg:p-8 flex flex-col justify-between shadow-soft hover:border-brand-400 hover:shadow-md transition-all group"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-colors">
-                        <Icon className="w-6 h-6 stroke-[2.2]" />
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-brand-50 text-brand-600 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-colors">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.2]" />
                       </div>
-                      <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full ${service.badgeColor}`}>
+                      <span className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full ${service.badgeColor}`}>
                         {service.tag}
                       </span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-[#111827] group-hover:text-brand-600 transition-colors">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[#111827] group-hover:text-brand-600 transition-colors">
                       {service.title}
                     </h3>
                     
@@ -323,7 +323,7 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
                     </p>
 
                     <div className="mt-5 pt-4 border-t border-gray-100 space-y-2">
-                      <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                      <p className="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider">
                         Procedure Includes:
                       </p>
                       {service.includes.map((item, idx) => (
@@ -335,14 +335,14 @@ export default function ServicesPage({ onOpenBooking, onNavigate }) {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                  <div className="mt-6 pt-5 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
                     <div>
-                      <span className="block text-[11px] text-gray-400 font-semibold uppercase">Pricing</span>
-                      <span className="text-base font-black text-gray-900">{service.price}</span>
+                      <span className="block text-[10px] sm:text-[11px] text-gray-400 font-semibold uppercase">Pricing</span>
+                      <span className="text-base sm:text-lg font-black text-gray-900">{service.price}</span>
                     </div>
                     <button
                       onClick={() => onOpenBooking(service.title)}
-                      className="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5 active:scale-95"
+                      className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-1.5 active:scale-95 cursor-pointer"
                     >
                       <span>Book Service</span>
                       <Calendar className="w-3.5 h-3.5" />

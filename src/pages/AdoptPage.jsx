@@ -60,38 +60,38 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
         
         {/* Hero Banner with Blended Rescue Pets */}
         <div className="relative rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-amber-50/60 via-white to-brand-50/50 border-2 border-brand-200/80 shadow-soft overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center min-h-[380px] lg:min-h-[440px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 z-10 relative">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-5">
+            <div className="lg:col-span-7 p-6 sm:p-10 lg:p-16 z-10 relative">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
                 <PawPrint className="w-3.5 h-3.5" />
                 <span>Certified Shelter Adoptions</span>
               </div>
               
-              <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
+              <h1 className="text-2xl sm:text-4xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
                 Meet Your New Best Friend Today.
               </h1>
               
-              <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed font-normal max-w-xl">
+              <p className="mt-4 sm:mt-6 text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed font-normal max-w-xl">
                 Every companion in our verified adoption directory is 100% vaccinated, spayed or neutered, and medically cleared. Browse our dogs and cats awaiting a loving family.
               </p>
 
               {/* Quick Metrics */}
-              <div className="mt-8 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-gray-700 font-semibold">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-700 font-semibold">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                   <span>Zero Adoption Fees on Vetted Rescues</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                   <span>Free 30-Day Post-Adoption Vet Care</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Blended Rescue Pets Image */}
-            <div className="lg:col-span-5 relative h-72 sm:h-96 lg:h-full min-h-[320px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
+            <div className="lg:col-span-5 relative h-64 sm:h-80 lg:h-full min-h-[260px] sm:min-h-[360px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
               {/* Left blend gradient */}
               <div className="absolute inset-y-0 left-0 w-24 sm:w-36 z-10 pointer-events-none hidden lg:block bg-gradient-to-r from-white via-white/80 to-transparent" />
               {/* Top fade for mobile */}
@@ -109,13 +109,13 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
               />
 
               {/* Floating Quality Badge */}
-              <div className="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md border border-brand-200/80 rounded-2xl p-3 shadow-lg flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center">
-                  <Sparkles className="w-4 h-4" />
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 bg-white/95 backdrop-blur-md border border-brand-200/80 rounded-2xl p-2.5 sm:p-3 shadow-lg flex items-center gap-2 sm:gap-2.5">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0">
+                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-900 leading-tight">85+ Rescues Ready</p>
-                  <p className="text-[10px] text-amber-600 font-semibold">100% Medically Cleared</p>
+                  <p className="text-[11px] sm:text-xs font-bold text-gray-900 leading-tight">85+ Rescues Ready</p>
+                  <p className="text-[9px] sm:text-[10px] text-amber-600 font-semibold">100% Medically Cleared</p>
                 </div>
               </div>
             </div>
@@ -124,8 +124,8 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
         </div>
 
         {/* Search & Filtering Bar */}
-        <div className="bg-white rounded-3xl border-2 border-brand-200/80 p-5 sm:p-7 shadow-soft space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+        <div className="bg-white rounded-3xl border-2 border-brand-200/80 p-4 sm:p-6 lg:p-7 shadow-soft space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 items-center">
             
             {/* Search Input */}
             <div className="md:col-span-5 relative">
@@ -135,17 +135,17 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
                 placeholder="Search by name, breed, temperament..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all text-gray-900"
+                className="w-full pl-11 pr-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-200 rounded-2xl text-xs sm:text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all text-gray-900"
               />
             </div>
 
             {/* Species Filter Pills */}
-            <div className="md:col-span-4 flex items-center gap-2 bg-gray-100/80 p-1.5 rounded-2xl">
+            <div className="md:col-span-4 flex items-center gap-1.5 sm:gap-2 bg-gray-100/80 p-1.5 rounded-2xl overflow-x-auto scrollbar-none">
               {['All', 'Dog', 'Cat'].map(species => (
                 <button
                   key={species}
                   onClick={() => setSpeciesFilter(species)}
-                  className={`flex-1 py-2 text-xs sm:text-sm font-bold rounded-xl transition-all ${
+                  className={`flex-1 py-2 px-2 sm:px-3 text-xs sm:text-sm font-bold rounded-xl transition-all shrink-0 cursor-pointer ${
                     speciesFilter === species
                       ? 'bg-white text-brand-600 shadow-xs'
                       : 'text-gray-600 hover:text-gray-900'
@@ -161,7 +161,7 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
               <select
                 value={ageFilter}
                 onChange={(e) => setAgeFilter(e.target.value)}
-                className="w-full py-3 px-4 bg-gray-50 border border-gray-200 rounded-2xl text-xs sm:text-sm font-semibold text-gray-700 focus:outline-none focus:border-brand-500 transition-all cursor-pointer"
+                className="w-full py-2.5 sm:py-3 px-3.5 sm:px-4 bg-gray-50 border border-gray-200 rounded-2xl text-xs sm:text-sm font-semibold text-gray-700 focus:outline-none focus:border-brand-500 transition-all cursor-pointer"
               >
                 <option value="All">All Age Groups</option>
                 <option value="Young">Puppies & Kittens (&lt; 1 Year)</option>
@@ -171,7 +171,7 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
 
           </div>
 
-          <div className="flex items-center justify-between text-xs text-gray-500 pt-2 border-t border-gray-100">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-gray-500 pt-2 border-t border-gray-100">
             <span>Showing <strong>{filteredPets.length}</strong> verified companions available for adoption</span>
             {(searchTerm || speciesFilter !== 'All' || ageFilter !== 'All') && (
               <button
@@ -180,7 +180,7 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
                   setSpeciesFilter('All');
                   setAgeFilter('All');
                 }}
-                className="text-brand-600 font-bold hover:underline"
+                className="text-brand-600 font-bold hover:underline self-start sm:self-auto cursor-pointer"
               >
                 Clear all filters
               </button>
@@ -189,7 +189,7 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
         </div>
 
         {/* Pets Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7 lg:gap-8">
           {filteredPets.map(pet => {
             const isFav = favorites[pet.id];
             return (
@@ -200,7 +200,7 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
               >
                 <div>
                   {/* Pet Photo Container with Pastel Organic Background */}
-                  <div className={`h-64 sm:h-72 ${pet.colorBg || 'bg-amber-50'} relative flex items-center justify-center p-4 overflow-hidden`}>
+                  <div className={`h-56 sm:h-64 lg:h-72 ${pet.colorBg || 'bg-amber-50'} relative flex items-center justify-center p-4 overflow-hidden`}>
                     
                     {/* Species Badge */}
                     <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-xs text-brand-700 font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs z-10">
@@ -231,9 +231,9 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
                   </div>
 
                   {/* Pet Bio Information */}
-                  <div className="p-5">
+                  <div className="p-4 sm:p-5">
                     <div className="flex items-baseline justify-between">
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-brand-600 transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-brand-600 transition-colors">
                         {pet.name}
                       </h3>
                       <span className="text-xs font-semibold text-gray-500">{pet.gender}</span>
@@ -248,7 +248,7 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
                       <span className="truncate">{pet.location}</span>
                     </div>
 
-                    <p className="text-xs text-gray-600 line-clamp-2 mt-3 leading-relaxed">
+                    <p className="text-xs text-gray-600 line-clamp-2 mt-2.5 sm:mt-3 leading-relaxed">
                       {pet.personality}
                     </p>
 
@@ -264,14 +264,14 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
                 </div>
 
                 {/* Bottom CTA Button */}
-                <div className="p-5 pt-0">
+                <div className="p-4 sm:p-5 pt-0">
                   <button
                     type="button"
                     onClick={(e) => {
                       e.stopPropagation();
                       onSelectPet(pet);
                     }}
-                    className="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-1.5 active:scale-95"
+                    className="w-full py-2.5 sm:py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-1.5 active:scale-95 cursor-pointer"
                   >
                     <span>Meet & Adopt {pet.name}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -285,28 +285,28 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
 
         {/* 4-Step Adoption Process Roadmap */}
         <div>
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
             <span className="text-xs font-bold text-brand-600 uppercase tracking-wider bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
               Seamless Process
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-[#111827] tracking-tight mt-3">
               How Adoption Works at HappyPaws
             </h2>
-            <p className="text-sm sm:text-base text-gray-500 mt-2">
+            <p className="text-xs sm:text-sm md:text-base text-gray-500 mt-2">
               Our 4-step workflow ensures mutual compatibility and smooth home transition.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {steps.map((st, sIdx) => (
               <div 
                 key={sIdx}
-                className="p-6 sm:p-7 rounded-3xl bg-white border-2 border-brand-200/80 shadow-soft relative overflow-hidden group hover:border-brand-400 transition-all"
+                className="p-5 sm:p-7 rounded-3xl bg-white border-2 border-brand-200/80 shadow-soft relative overflow-hidden group hover:border-brand-400 transition-all"
               >
-                <span className="text-3xl sm:text-4xl font-black text-brand-200 group-hover:text-brand-500 transition-colors">
+                <span className="text-2xl sm:text-4xl font-black text-brand-200 group-hover:text-brand-500 transition-colors">
                   {st.num}
                 </span>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mt-3 mb-1.5">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mt-2.5 sm:mt-3 mb-1 sm:mb-1.5">
                   {st.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
@@ -318,27 +318,27 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
         </div>
 
         {/* Shelter Partnership Callout */}
-        <div className="rounded-3xl sm:rounded-[2.5rem] bg-[#111827] text-white p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
+        <div className="rounded-3xl sm:rounded-[2.5rem] bg-[#111827] text-white p-6 sm:p-12 lg:p-14 text-center relative overflow-hidden shadow-2xl">
           <div className="relative z-10 max-w-2xl mx-auto space-y-4">
             <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-brand-300 text-xs font-bold uppercase tracking-wider">
               Can't Adopt Right Now?
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight">
               Support Our Rescue Network With Pet Essentials
             </h2>
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
               Every purchase from the HappyPaws Care Shop contributes directly to shelter medical supplies, vaccination rounds, and post-surgery rehabilitation.
             </p>
-            <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate('shop')}
-                className="px-7 py-3 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm shadow-md transition-all active:scale-95"
+                className="w-full sm:w-auto px-7 py-3 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95 cursor-pointer text-center"
               >
                 Explore Pet Shop
               </button>
               <button
                 onClick={() => onNavigate('stories')}
-                className="px-7 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all active:scale-95"
+                className="w-full sm:w-auto px-7 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition-all active:scale-95 cursor-pointer text-center"
               >
                 Read Rescue Stories
               </button>

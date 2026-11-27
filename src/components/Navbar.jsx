@@ -164,22 +164,31 @@ export default function Navbar({
             )}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex sm:hidden items-center gap-3">
+          {/* Mobile menu button & quick actions */}
+          <div className="flex sm:hidden items-center gap-2">
+            <button 
+              onClick={onOpenSearch}
+              aria-label="Search"
+              className="p-1.5 text-[#111827] hover:text-brand-600 transition-colors cursor-pointer"
+            >
+              <Search className="w-5 h-5 stroke-[2.2]" />
+            </button>
             <button 
               onClick={onOpenCart}
-              className="p-1 text-[#111827] relative"
+              aria-label="Cart"
+              className="p-1.5 text-[#111827] hover:text-brand-600 transition-colors relative cursor-pointer"
             >
               <ShoppingBag className="w-5 h-5 stroke-[2.2]" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-brand-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute 0 top-0.5 right-0.5 bg-brand-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1 text-[#111827] hover:text-brand-600"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              className="p-1.5 text-[#111827] hover:text-brand-600 cursor-pointer"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

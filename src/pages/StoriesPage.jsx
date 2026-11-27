@@ -113,34 +113,34 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
         
         {/* Hero Banner with Blended Stories Image */}
         <div className="relative rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-purple-50/70 via-white to-amber-50/50 border-2 border-brand-200/80 shadow-soft overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center min-h-[380px] lg:min-h-[440px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 z-10 relative">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-5">
+            <div className="lg:col-span-7 p-6 sm:p-10 lg:p-16 z-10 relative">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
                 <Heart className="w-3.5 h-3.5 fill-current" />
                 <span>Real Adoptions • Real Love</span>
               </div>
               
-              <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
+              <h1 className="text-2xl sm:text-4xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
                 Heartwarming Stories From Rescued to Loved.
               </h1>
               
-              <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed font-normal max-w-xl">
+              <p className="mt-4 sm:mt-6 text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed font-normal max-w-xl">
                 Every adoption is a victory of compassion over hardship. Read real accounts from families who opened their hearts and homes to HappyPaws shelter companions.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <button
                   onClick={onOpenStory}
-                  className="px-7 py-3.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md hover:shadow-brand-500/25 transition-all flex items-center gap-2 group active:scale-95 cursor-pointer"
+                  className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-brand-500/25 transition-all flex items-center justify-center gap-2 group active:scale-95 cursor-pointer text-center"
                 >
                   <Play className="w-4 h-4 fill-current" />
                   <span>Watch Video Showcase</span>
                 </button>
                 <button
                   onClick={() => onNavigate('adopt')}
-                  className="px-7 py-3.5 rounded-2xl bg-white hover:bg-gray-50 text-gray-800 font-bold text-sm border-2 border-gray-200 hover:border-brand-300 transition-all active:scale-95 cursor-pointer"
+                  className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-white hover:bg-gray-50 text-gray-800 font-bold text-xs sm:text-sm border-2 border-gray-200 hover:border-brand-300 transition-all active:scale-95 cursor-pointer text-center"
                 >
                   Start Your Own Story
                 </button>
@@ -148,7 +148,7 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
             </div>
 
             {/* Right Column: Blended Happy Family Image */}
-            <div className="lg:col-span-5 relative h-72 sm:h-96 lg:h-full min-h-[320px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
+            <div className="lg:col-span-5 relative h-64 sm:h-80 lg:h-full min-h-[260px] sm:min-h-[360px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
               {/* Left blend gradient */}
               <div className="absolute inset-y-0 left-0 w-24 sm:w-36 z-10 pointer-events-none hidden lg:block bg-gradient-to-r from-white via-white/80 to-transparent" />
               {/* Top fade for mobile */}
@@ -166,13 +166,13 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
               />
 
               {/* Floating Quality Badge */}
-              <div className="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md border border-brand-200/80 rounded-2xl p-3 shadow-lg flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-purple-600 text-white flex items-center justify-center">
-                  <Star className="w-4 h-4 fill-current" />
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 bg-white/95 backdrop-blur-md border border-brand-200/80 rounded-2xl p-2.5 sm:p-3 shadow-lg flex items-center gap-2 sm:gap-2.5">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-purple-600 text-white flex items-center justify-center shrink-0">
+                  <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-900 leading-tight">15,400+ Families</p>
-                  <p className="text-[10px] text-purple-600 font-semibold">100% Happily Settled</p>
+                  <p className="text-[11px] sm:text-xs font-bold text-gray-900 leading-tight">15,400+ Families</p>
+                  <p className="text-[9px] sm:text-[10px] text-purple-600 font-semibold">100% Happily Settled</p>
                 </div>
               </div>
             </div>
@@ -181,9 +181,9 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#111827] tracking-tight">
+            <h2 className="text-xl sm:text-3xl font-black text-[#111827] tracking-tight">
               Community Adoption Tales
             </h2>
             <p className="text-xs sm:text-sm text-gray-500 mt-1">
@@ -191,12 +191,12 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 bg-gray-100/80 p-1.5 rounded-2xl">
+          <div className="flex items-center gap-2 bg-gray-100/80 p-1.5 rounded-2xl overflow-x-auto scrollbar-none self-start sm:self-auto">
             {['All', 'Dogs', 'Cats'].map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all shrink-0 cursor-pointer ${
                   activeFilter === cat
                     ? 'bg-white text-brand-600 shadow-xs'
                     : 'text-gray-600 hover:text-gray-900'
@@ -209,7 +209,7 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
         </div>
 
         {/* Stories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 lg:gap-8">
           {filtered.map(story => (
             <div
               key={story.id}
@@ -217,7 +217,7 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
             >
               <div>
                 {/* Image & Video Trigger */}
-                <div className="h-60 relative overflow-hidden">
+                <div className="h-52 sm:h-60 relative overflow-hidden">
                   <img
                     src={story.image}
                     alt={story.title}
@@ -229,7 +229,7 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
                   {story.hasVideo && (
                     <button
                       onClick={onOpenStory}
-                      className="absolute bottom-3.5 right-3.5 bg-brand-600/90 hover:bg-brand-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md backdrop-blur-xs flex items-center gap-1.5 transition-all hover:scale-105"
+                      className="absolute bottom-3.5 right-3.5 bg-brand-600/90 hover:bg-brand-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md backdrop-blur-xs flex items-center gap-1.5 transition-all hover:scale-105 cursor-pointer"
                     >
                       <Play className="w-3 h-3 fill-current" />
                       <span>Watch Video</span>
@@ -238,19 +238,19 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   <div className="flex items-center justify-between text-xs text-gray-400 font-semibold mb-2">
                     <span>{story.location}</span>
                     <span className="text-brand-600 font-bold">{story.timeSince}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors">
                     {story.title}
                   </h3>
 
                   {/* Quote block */}
-                  <div className="mt-3 p-3.5 rounded-2xl bg-brand-50/60 border border-brand-100 text-xs text-gray-700 italic relative">
-                    <Quote className="w-4 h-4 text-brand-400 inline mr-1 opacity-60" />
+                  <div className="mt-3 p-3 sm:p-3.5 rounded-2xl bg-brand-50/60 border border-brand-100 text-xs text-gray-700 italic relative">
+                    <Quote className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-400 inline mr-1 opacity-60" />
                     "{story.quote}"
                   </div>
 
@@ -261,7 +261,7 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
               </div>
 
               {/* Adopter Footer */}
-              <div className="p-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-4">
+              <div className="p-5 sm:p-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-3 sm:mt-4">
                 <div>
                   <span className="text-[10px] text-gray-400 font-semibold uppercase block">Adopters</span>
                   <span className="text-xs font-bold text-gray-900">{story.adopter}</span>
@@ -277,12 +277,12 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
         </div>
 
         {/* Share Your Story Form */}
-        <div className="rounded-3xl sm:rounded-[2.5rem] bg-white border-2 border-brand-200/80 p-8 sm:p-14 shadow-soft">
-          <div className="max-w-2xl mx-auto text-center mb-8">
+        <div className="rounded-3xl sm:rounded-[2.5rem] bg-white border-2 border-brand-200/80 p-6 sm:p-10 lg:p-14 shadow-soft">
+          <div className="max-w-2xl mx-auto text-center mb-6 sm:mb-8">
             <span className="text-xs font-bold text-brand-600 uppercase tracking-wider bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
               Community Voices
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-[#111827] tracking-tight mt-3">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-black text-[#111827] tracking-tight mt-3">
               Did You Adopt Through HappyPaws?
             </h2>
             <p className="text-xs sm:text-sm text-gray-500 mt-2">
@@ -291,18 +291,18 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
           </div>
 
           {submitted ? (
-            <div className="max-w-md mx-auto text-center p-8 bg-emerald-50 rounded-3xl border border-emerald-200 text-emerald-800 space-y-2">
-              <CheckCircle2 className="w-10 h-10 mx-auto text-emerald-600" />
-              <h4 className="text-lg font-bold">Thank You For Sharing! 🐾</h4>
+            <div className="max-w-md mx-auto text-center p-6 sm:p-8 bg-emerald-50 rounded-3xl border border-emerald-200 text-emerald-800 space-y-2">
+              <CheckCircle2 className="w-9 h-9 sm:w-10 sm:h-10 mx-auto text-emerald-600" />
+              <h4 className="text-base sm:text-lg font-bold">Thank You For Sharing! 🐾</h4>
               <p className="text-xs text-emerald-700">
                 Our community coordinator will review your heartwarming story and feature it on our social feeds.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleStorySubmit} className="max-w-xl mx-auto space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form onSubmit={handleStorySubmit} className="max-w-xl mx-auto space-y-3.5 sm:space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
                     Pet's Name
                   </label>
                   <input
@@ -311,11 +311,11 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
                     placeholder="e.g. Toby"
                     value={petName}
                     onChange={(e) => setPetName(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white text-gray-900"
+                    className="w-full px-3.5 sm:px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-brand-500 focus:bg-white text-gray-900"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
                     Your Name
                   </label>
                   <input
@@ -324,13 +324,13 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
                     placeholder="e.g. Maria Santos"
                     value={authorName}
                     onChange={(e) => setAuthorName(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white text-gray-900"
+                    className="w-full px-3.5 sm:px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-brand-500 focus:bg-white text-gray-900"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-[11px] sm:text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
                   Your Happy Tail Story
                 </label>
                 <textarea
@@ -339,13 +339,13 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
                   placeholder="How has your companion changed your life? Share your favorite memories..."
                   value={storyText}
                   onChange={(e) => setStoryText(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white text-gray-900"
+                  className="w-full px-3.5 sm:px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-brand-500 focus:bg-white text-gray-900"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 active:scale-95 text-sm"
+                className="w-full py-3 sm:py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 active:scale-95 text-xs sm:text-sm cursor-pointer"
               >
                 <Send className="w-4 h-4" />
                 <span>Submit Your Happy Tale</span>
