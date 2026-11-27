@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search, X, ArrowUpRight, ShoppingBag, Heart } from 'lucide-react';
 import { PETS, PRODUCTS, SERVICES } from '../data/mockData';
 
-export default function SearchModal({ isOpen, onClose, onSelectPet, onAddToCart }) {
+export default function SearchModal({ isOpen, onClose, onSelectPet, onAddToCart, onNavigate }) {
   const [query, setQuery] = useState('');
 
   if (!isOpen) return null;
@@ -163,9 +163,15 @@ export default function SearchModal({ isOpen, onClose, onSelectPet, onAddToCart 
                           <p className="text-xs font-bold text-gray-900">{srv.title}</p>
                           <p className="text-[11px] text-gray-500 line-clamp-1">{srv.description}</p>
                         </div>
-                        <a href="#services" onClick={onClose} className="text-xs font-bold text-brand-600 hover:underline">
+                        <button 
+                          onClick={() => {
+                            onClose();
+                            if (onNavigate) onNavigate('services');
+                          }} 
+                          className="text-xs font-bold text-brand-600 hover:underline cursor-pointer"
+                        >
                           View
-                        </a>
+                        </button>
                       </div>
                     ))}
                   </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
-export default function Footer({ onOpenAdopt, onOpenBooking }) {
+export default function Footer({ onOpenAdopt, onOpenBooking, onNavigate }) {
   return (
     <footer className="pt-10 pb-12 bg-transparent relative">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
@@ -25,8 +25,11 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
             
             {/* Column 1: Brand & Bio */}
             <div className="lg:col-span-4 space-y-4">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center text-white">
+              <button 
+                onClick={() => onNavigate && onNavigate('home')}
+                className="flex items-center gap-2.5 text-left group"
+              >
+                <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center text-white group-hover:bg-brand-500 transition-colors">
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <circle cx="7" cy="8" r="2.5" />
                     <circle cx="17" cy="8" r="2.5" />
@@ -35,10 +38,10 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
                     <path d="M12 11c-2.8 0-5 2-5 4.5 0 2.2 2 4 5 4s5-1.8 5-4c0-2.5-2.2-4.5-5-4.5z" />
                   </svg>
                 </div>
-                <span className="text-xl font-bold tracking-tight">
+                <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-300 transition-colors">
                   HappyPaws
                 </span>
-              </div>
+              </button>
 
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm">
                 HappyPaws is a digital rescue network connecting certified shelters and rescue pets directly with loving homes across the country.
@@ -51,11 +54,11 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
                 Pet Services
               </h4>
               <ul className="space-y-2.5 text-xs sm:text-sm text-gray-400">
-                <li><a href="#adopt" className="hover:text-white transition-colors">Adoption Portal</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Vet Clinic</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Pet Grooming</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Pet Daycare</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Quarantine Boarding</a></li>
+                <li><button onClick={() => onNavigate && onNavigate('adopt')} className="hover:text-white transition-colors">Adoption Portal</button></li>
+                <li><button onClick={() => onNavigate && onNavigate('services')} className="hover:text-white transition-colors">Vet Clinic</button></li>
+                <li><button onClick={() => onNavigate && onNavigate('services')} className="hover:text-white transition-colors">Pet Grooming</button></li>
+                <li><button onClick={() => onNavigate && onNavigate('services')} className="hover:text-white transition-colors">Pet Daycare</button></li>
+                <li><button onClick={() => onNavigate && onNavigate('services')} className="hover:text-white transition-colors">Quarantine Boarding</button></li>
               </ul>
             </div>
 
@@ -65,11 +68,11 @@ export default function Footer({ onOpenAdopt, onOpenBooking }) {
                 Get Involved
               </h4>
               <ul className="space-y-2.5 text-xs sm:text-sm text-gray-400">
-                <li><a href="#about" className="hover:text-white transition-colors">Volunteer Roles</a></li>
-                <li><a href="#about" className="hover:text-white transition-colors">Foster Care</a></li>
-                <li><a href="#shop" className="hover:text-white transition-colors">Donation Hub</a></li>
-                <li><a href="#adopt" className="hover:text-white transition-colors">Sponsor A Pet</a></li>
-                <li><a href="#about" className="hover:text-white transition-colors">Success Stories</a></li>
+                <li><button onClick={() => onNavigate && onNavigate('about')} className="hover:text-white transition-colors">Volunteer Roles</button></li>
+                <li><button onClick={() => onNavigate && onNavigate('about')} className="hover:text-white transition-colors">Foster Care</button></li>
+                <li><button onClick={() => onNavigate && onNavigate('shop')} className="hover:text-white transition-colors">Care Shop</button></li>
+                <li><button onClick={() => onNavigate && onNavigate('adopt')} className="hover:text-white transition-colors">Sponsor A Pet</button></li>
+                <li><button onClick={() => onNavigate && onNavigate('stories')} className="hover:text-white transition-colors">Success Stories</button></li>
               </ul>
             </div>
 

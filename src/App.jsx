@@ -3,15 +3,15 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import AnimatedBackground from './components/AnimatedBackground';
-import Hero from './components/Hero';
-import BrandPartners from './components/BrandPartners';
-import AboutSection from './components/AboutSection';
-import CompleteSolutions from './components/CompleteSolutions';
-import FeaturedShop from './components/FeaturedShop';
-import GuaranteedPeace from './components/GuaranteedPeace';
-import JourneyCallout from './components/JourneyCallout';
-import AdoptablePets from './components/AdoptablePets';
 import Footer from './components/Footer';
+
+// Pages
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import AdoptPage from './pages/AdoptPage';
+import ShopPage from './pages/ShopPage';
+import StoriesPage from './pages/StoriesPage';
 
 // Modals
 import CartDrawer from './components/CartDrawer';
@@ -56,6 +56,39 @@ export default function App() {
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [toast, setToast] = useState(null);
+
+  // Active Multi-Page Navigation State ('home' | 'about' | 'services' | 'adopt' | 'shop' | 'stories')
+  const [activePage, setActivePage] = useState(() => {
+    const rawHash = window.location.hash.replace('#/', '').replace('#', '');
+    if (['home', 'about', 'services', 'adopt', 'shop', 'stories'].includes(rawHash)) {
+      return rawHash;
+    }
+    return 'home';
+  });
+
+  const handleNavigate = (pageId) => {
+    setActivePage(pageId);
+    window.location.hash = `#/${pageId}`;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+  };
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const rawHash = window.location.hash.replace('#/', '').replace('#', '');
+      if (['home', 'about', 'services', 'adopt', 'shop', 'stories'].includes(rawHash)) {
+        setActivePage(rawHash);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        if (lenisRef.current) {
+          lenisRef.current.scrollTo(0, { immediate: true });
+        }
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   // Lenis Smooth Scroll Instance
   const lenisRef = useRef(null);
@@ -187,13 +220,7 @@ export default function App() {
   };
 
   const handleOpenAdoptGeneral = () => {
-    const el = document.getElementById('adopt');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      setSelectedPet(PETS[0]);
-      setAdoptModalOpen(true);
-    }
+    handleNavigate('adopt');
   };
 
   // Booking Handlers
@@ -223,54 +250,66 @@ export default function App() {
         onOpenAuth={() => setAuthModalOpen(true)}
         onOpenProfile={() => setProfileModalOpen(true)}
         onLogout={handleLogout}
+        activePage={activePage}
+        onNavigate={handleNavigate}
       />
 
-      {/* Main Content Sections */}
+      {/* Main Content Pages */}
       <main>
-        {/* 1. Hero Section (Image 7) */}
-        <Hero
-          onOpenAdopt={handleOpenAdoptGeneral}
-          onOpenStory={() => setStoryModalOpen(true)}
-        />
+        {activePage === 'home' && (
+          <HomePage
+            onOpenAdopt={handleOpenAdoptGeneral}
+            onOpenStory={() => setStoryModalOpen(true)}
+            onOpenBooking={handleOpenBooking}
+            onAddToCart={handleAddToCart}
+            onSelectPet={handleSelectPet}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 2. Brand Partners Row (Image 7) */}
-        <BrandPartners />
+        {activePage === 'about' && (
+          <AboutPage
+            onOpenAdopt={handleOpenAdoptGeneral}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 3. About Section: Driven By Pure Compassion & Vets (Image 7 & 6) */}
-        <AboutSection
-          onOpenStory={() => setStoryModalOpen(true)}
-        />
+        {activePage === 'services' && (
+          <ServicesPage
+            onOpenBooking={handleOpenBooking}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 4. Complete Solutions For Pets: Interactive Services (Image 6 & 2) */}
-        <CompleteSolutions
-          onOpenBooking={handleOpenBooking}
-        />
+        {activePage === 'adopt' && (
+          <AdoptPage
+            onSelectPet={handleSelectPet}
+            onOpenAdopt={handleOpenAdoptGeneral}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 5. Featured Pet Care Essentials Shop */}
-        <FeaturedShop
-          onAddToCart={handleAddToCart}
-        />
+        {activePage === 'shop' && (
+          <ShopPage
+            onAddToCart={handleAddToCart}
+            onOpenCart={() => setCartOpen(true)}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 6. Guaranteed Peace of Mind (Our Promise To You) */}
-        <GuaranteedPeace
-          onOpenAdopt={handleOpenAdoptGeneral}
-        />
-
-        {/* 7. Start A Beautiful Journey (Panoramic Pets Banner) */}
-        <JourneyCallout
-          onOpenAdopt={handleOpenAdoptGeneral}
-        />
-
-        {/* 8. Why Pet Owners Trust Us (Adoptable Pets Grid) */}
-        <AdoptablePets
-          onSelectPet={handleSelectPet}
-        />
+        {activePage === 'stories' && (
+          <StoriesPage
+            onOpenStory={() => setStoryModalOpen(true)}
+            onNavigate={handleNavigate}
+          />
+        )}
       </main>
 
-      {/* 9. Modern Dark Footer with Puppy & Kitten */}
+      {/* Modern Dark Footer with Puppy & Kitten */}
       <Footer
         onOpenAdopt={handleOpenAdoptGeneral}
         onOpenBooking={handleOpenBooking}
+        onNavigate={handleNavigate}
       />
 
       {/* Interactive Modals & Drawers */}
@@ -306,6 +345,7 @@ export default function App() {
         onClose={() => setSearchModalOpen(false)}
         onSelectPet={handleSelectPet}
         onAddToCart={handleAddToCart}
+        onNavigate={handleNavigate}
       />
 
       <StoryModal

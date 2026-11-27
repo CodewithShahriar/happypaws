@@ -10,7 +10,9 @@ export default function Navbar({
   user,
   onOpenAuth,
   onOpenProfile,
-  onLogout
+  onLogout,
+  activePage = 'home',
+  onNavigate
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -47,8 +49,12 @@ export default function Navbar({
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 relative z-10">
         <div className="flex items-center justify-between">
           
-          {/* Logo (matching 2nd screenshot: black paw icon + bold text) */}
-          <a href="#" className="flex items-center gap-2 group">
+          {/* Logo */}
+          <button 
+            onClick={() => onNavigate && onNavigate('home')} 
+            className="flex items-center gap-2 group text-left cursor-pointer"
+            aria-label="HappyPaws Home"
+          >
             <svg className="w-7 h-7 fill-[#111827] group-hover:fill-brand-600 transition-colors" viewBox="0 0 24 24">
               <circle cx="7" cy="8" r="2.5" />
               <circle cx="17" cy="8" r="2.5" />
@@ -59,29 +65,36 @@ export default function Navbar({
             <span className="text-2xl font-black tracking-tight text-[#111827]">
               HappyPaws
             </span>
-          </a>
+          </button>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 text-[14px] font-semibold text-gray-700">
-            <a href="#hero" className="text-gray-900 font-bold relative flex flex-col items-center">
-              <span>Home</span>
-              <span className="w-7 h-[2.5px] bg-brand-600 rounded-full mt-1"></span>
-            </a>
-            <a href="#about" className="hover:text-brand-600 transition-colors">
-              About Us
-            </a>
-            <a href="#services" className="hover:text-brand-600 transition-colors">
-              Services
-            </a>
-            <a href="#adopt" className="hover:text-brand-600 transition-colors">
-              Adopt a Pet
-            </a>
-            <a href="#shop" className="hover:text-brand-600 transition-colors">
-              Pet Shop
-            </a>
-            <a href="#stories" className="hover:text-brand-600 transition-colors">
-              Stories
-            </a>
+          <nav className="hidden md:flex items-center gap-8 text-[14px]">
+            {[
+              { id: 'home', label: 'Home' },
+              { id: 'about', label: 'About Us' },
+              { id: 'services', label: 'Services' },
+              { id: 'adopt', label: 'Adopt a Pet' },
+              { id: 'shop', label: 'Pet Shop' },
+              { id: 'stories', label: 'Stories' }
+            ].map(item => {
+              const isActive = activePage === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => onNavigate && onNavigate(item.id)}
+                  className={`transition-colors relative flex flex-col items-center py-1 cursor-pointer select-none ${
+                    isActive 
+                      ? 'text-gray-900 font-bold' 
+                      : 'text-gray-600 hover:text-brand-600 font-semibold'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  {isActive && (
+                    <span className="w-6 h-[2.5px] bg-brand-600 rounded-full mt-1 absolute -bottom-1" />
+                  )}
+                </button>
+              );
+            })}
           </nav>
 
           {/* Right Action Icons & Login (matching 2nd screenshot) */}
@@ -176,49 +189,33 @@ export default function Navbar({
 
         {/* Mobile dropdown */}
         {mobileMenuOpen && (
-          <div className="sm:hidden mt-3 pt-3 border-t border-gray-200/60 pb-4 space-y-2.5">
-            <a 
-              href="#hero" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-sm font-bold text-brand-600 rounded-lg bg-brand-50"
-            >
-              Home
-            </a>
-            <a 
-              href="#about" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-lg"
-            >
-              About Us
-            </a>
-            <a 
-              href="#services" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-lg"
-            >
-              Services
-            </a>
-            <a 
-              href="#adopt" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-lg"
-            >
-              Adopt a Pet
-            </a>
-            <a 
-              href="#shop" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-lg"
-            >
-              Pet Shop
-            </a>
-            <a 
-              href="#stories" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-lg"
-            >
-              Stories
-            </a>
+          <div className="sm:hidden mt-3 pt-3 border-t border-gray-200/60 pb-4 space-y-1.5">
+            {[
+              { id: 'home', label: 'Home' },
+              { id: 'about', label: 'About Us' },
+              { id: 'services', label: 'Services' },
+              { id: 'adopt', label: 'Adopt a Pet' },
+              { id: 'shop', label: 'Pet Shop' },
+              { id: 'stories', label: 'Stories' }
+            ].map(item => {
+              const isActive = activePage === item.id;
+              return (
+                <button 
+                  key={item.id}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    if (onNavigate) onNavigate(item.id);
+                  }}
+                  className={`w-full text-left px-3.5 py-2.5 text-sm font-bold rounded-xl transition-colors ${
+                    isActive 
+                      ? 'text-brand-600 bg-brand-50' 
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
 
             <div className="pt-2 border-t border-gray-200/60 px-3 space-y-1">
               {user ? (
