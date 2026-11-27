@@ -159,65 +159,64 @@ export default function ShopPage({ onAddToCart, onOpenCart, onNavigate }) {
           </div>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 lg:gap-8">
+        {/* Products Grid: 2 columns on mobile, 3 columns on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {filtered.map(product => (
             <div
               key={product.id}
-              className="rounded-3xl bg-white border-2 border-brand-300 overflow-hidden shadow-soft hover:border-brand-500 hover:-translate-y-1.5 transition-all flex flex-col justify-between group"
+              className="rounded-2xl sm:rounded-3xl bg-white border-2 border-brand-300 overflow-hidden shadow-soft hover:border-brand-500 hover:-translate-y-1.5 transition-all flex flex-col justify-between group"
             >
               <div>
                 {/* Product Image Frame */}
-                <div className="h-52 sm:h-64 bg-gray-50/80 p-5 sm:p-6 flex items-center justify-center relative overflow-hidden">
-                  <span className={`absolute top-3.5 left-3.5 text-[10px] font-bold px-2.5 py-1 rounded-full ${product.badgeColor || 'bg-brand-100 text-brand-700'}`}>
+                <div className="h-36 sm:h-60 lg:h-64 bg-gray-50/80 p-2.5 sm:p-5 flex items-center justify-center relative overflow-hidden">
+                  <span className={`absolute top-2 left-2 sm:top-3.5 sm:left-3.5 text-[9px] sm:text-[10px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full ${product.badgeColor || 'bg-brand-100 text-brand-700'}`}>
                     {product.tag}
                   </span>
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md select-none"
                   />
                 </div>
 
                 {/* Details */}
-                <div className="p-4 sm:p-6">
-                  <div className="flex items-center justify-between text-xs text-gray-400 font-semibold mb-1">
-                    <span>{product.category}</span>
-                    <span className="flex items-center gap-1 text-amber-500 font-bold">
-                      <Star className="w-3.5 h-3.5 fill-current" />
+                <div className="p-3 sm:p-5 lg:p-6">
+                  <div className="flex items-center justify-between text-[10px] sm:text-xs text-gray-400 font-semibold mb-1">
+                    <span className="truncate max-w-[65%]">{product.category}</span>
+                    <span className="flex items-center gap-0.5 sm:gap-1 text-amber-500 font-bold shrink-0">
+                      <Star className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current" />
                       <span>{product.rating}</span>
-                      <span className="text-gray-400">({product.reviewsCount})</span>
                     </span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors">
+                  <h3 className="text-xs sm:text-base lg:text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-1">
                     {product.name}
                   </h3>
 
-                  <p className="text-xs text-gray-500 font-medium mt-1">
-                    Net Wt: {product.weight}
+                  <p className="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5 sm:mt-1 truncate">
+                    Net: {product.weight}
                   </p>
 
-                  <p className="text-xs text-gray-600 line-clamp-2 mt-2 leading-relaxed">
+                  <p className="hidden sm:block text-xs text-gray-600 line-clamp-2 mt-2 leading-relaxed">
                     {product.description}
                   </p>
                 </div>
               </div>
 
               {/* Price & Add to Bag Pill */}
-              <div className="p-4 sm:p-6 pt-0 border-t border-gray-100/80 flex items-center justify-between mt-3 sm:mt-4">
+              <div className="p-3 sm:p-5 lg:p-6 pt-0 border-t border-gray-100/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0 mt-2 sm:mt-4">
                 <div>
-                  <span className="text-[10px] sm:text-[11px] text-gray-400 font-semibold uppercase block">Price</span>
-                  <span className="text-lg sm:text-xl font-black text-gray-900">
+                  <span className="text-[9px] sm:text-[11px] text-gray-400 font-semibold uppercase block">Price</span>
+                  <span className="text-sm sm:text-lg lg:text-xl font-black text-gray-900">
                     {product.currency}{product.price.toFixed(2)}
                   </span>
                 </div>
 
                 <button
                   onClick={() => onAddToCart(product)}
-                  className="px-4 sm:px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md hover:shadow-brand-500/25 transition-all flex items-center gap-2 active:scale-95 group/btn cursor-pointer"
+                  className="w-full sm:w-auto px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-[11px] sm:text-xs shadow-md hover:shadow-brand-500/25 transition-all flex items-center justify-center gap-1.5 active:scale-95 group/btn cursor-pointer"
                 >
-                  <ShoppingBag className="w-3.5 h-3.5 group-hover/btn:rotate-6 transition-transform" />
+                  <ShoppingBag className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover/btn:rotate-6 transition-transform" />
                   <span>Add to Bag</span>
                 </button>
               </div>

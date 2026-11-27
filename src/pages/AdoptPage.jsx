@@ -188,74 +188,74 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
           </div>
         </div>
 
-        {/* Pets Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7 lg:gap-8">
+        {/* Pets Cards Grid: 2 columns on mobile, 4 columns on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
           {filteredPets.map(pet => {
             const isFav = favorites[pet.id];
             return (
               <div
                 key={pet.id}
                 onClick={() => onSelectPet(pet)}
-                className="rounded-3xl bg-white border-2 border-brand-200/80 overflow-hidden shadow-soft hover:border-brand-400 hover:-translate-y-1.5 transition-all cursor-pointer flex flex-col justify-between group"
+                className="rounded-2xl sm:rounded-3xl bg-white border-2 border-brand-200/80 overflow-hidden shadow-soft hover:border-brand-400 hover:-translate-y-1.5 transition-all cursor-pointer flex flex-col justify-between group"
               >
                 <div>
                   {/* Pet Photo Container with Pastel Organic Background */}
-                  <div className={`h-56 sm:h-64 lg:h-72 ${pet.colorBg || 'bg-amber-50'} relative flex items-center justify-center p-4 overflow-hidden`}>
+                  <div className={`h-40 sm:h-64 lg:h-72 ${pet.colorBg || 'bg-amber-50'} relative flex items-center justify-center p-2.5 sm:p-4 overflow-hidden`}>
                     
                     {/* Species Badge */}
-                    <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-xs text-brand-700 font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs z-10">
+                    <span className="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/95 backdrop-blur-xs text-brand-700 font-bold text-[9px] sm:text-[10px] uppercase tracking-wider px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-xs z-10">
                       {pet.species} • {pet.age}
                     </span>
 
                     {/* Favorite Heart Button */}
                     <button
                       onClick={(e) => toggleFavorite(e, pet.id)}
-                      className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/95 backdrop-blur-xs flex items-center justify-center text-gray-400 hover:text-red-500 shadow-xs z-10 transition-colors"
+                      className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 backdrop-blur-xs flex items-center justify-center text-gray-400 hover:text-red-500 shadow-xs z-10 transition-colors"
                       aria-label="Add to favorites"
                     >
-                      <Heart className={`w-4 h-4 ${isFav ? 'fill-red-500 text-red-500' : ''}`} />
+                      <Heart className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isFav ? 'fill-red-500 text-red-500' : ''}`} />
                     </button>
 
                     {/* Pet Image */}
                     <img
                       src={pet.image}
                       alt={pet.name}
-                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md select-none"
                     />
 
                     {/* Green Availability Pulse */}
-                    <div className="absolute bottom-3 left-3.5 flex items-center gap-1.5 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full backdrop-blur-xs">
+                    <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3.5 flex items-center gap-1 sm:gap-1.5 bg-emerald-500/90 text-white text-[8px] sm:text-[10px] font-bold px-1.5 py-0.5 sm:px-2 rounded-full backdrop-blur-xs">
                       <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                      <span>Ready to Adopt</span>
+                      <span>Ready</span>
                     </div>
                   </div>
 
                   {/* Pet Bio Information */}
-                  <div className="p-4 sm:p-5">
+                  <div className="p-3 sm:p-5">
                     <div className="flex items-baseline justify-between">
-                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-brand-600 transition-colors">
+                      <h3 className="text-sm sm:text-xl font-bold text-gray-900 group-hover:text-brand-600 transition-colors truncate">
                         {pet.name}
                       </h3>
-                      <span className="text-xs font-semibold text-gray-500">{pet.gender}</span>
+                      <span className="text-[10px] sm:text-xs font-semibold text-gray-500 shrink-0 ml-1">{pet.gender}</span>
                     </div>
                     
-                    <p className="text-xs text-gray-500 font-medium mt-0.5">
+                    <p className="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5 truncate">
                       {pet.breed}
                     </p>
 
-                    <div className="flex items-center gap-1 text-[11px] text-gray-400 mt-2">
+                    <div className="flex items-center gap-1 text-[10px] sm:text-[11px] text-gray-400 mt-1 sm:mt-2">
                       <MapPin className="w-3 h-3 text-brand-500 shrink-0" />
                       <span className="truncate">{pet.location}</span>
                     </div>
 
-                    <p className="text-xs text-gray-600 line-clamp-2 mt-2.5 sm:mt-3 leading-relaxed">
+                    <p className="hidden sm:block text-xs text-gray-600 line-clamp-2 mt-2.5 sm:mt-3 leading-relaxed">
                       {pet.personality}
                     </p>
 
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-gray-100">
-                      {pet.tags.slice(0, 3).map((tag, tIdx) => (
-                        <span key={tIdx} className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-brand-50 text-brand-700 border border-brand-200/60">
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5 mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-gray-100">
+                      {pet.tags.slice(0, 2).map((tag, tIdx) => (
+                        <span key={tIdx} className="text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-md bg-brand-50 text-brand-700 border border-brand-200/60 truncate">
                           {tag}
                         </span>
                       ))}
@@ -264,17 +264,17 @@ export default function AdoptPage({ onSelectPet, onOpenAdopt, onNavigate }) {
                 </div>
 
                 {/* Bottom CTA Button */}
-                <div className="p-4 sm:p-5 pt-0">
+                <div className="p-3 sm:p-5 pt-0">
                   <button
                     type="button"
                     onClick={(e) => {
                       e.stopPropagation();
                       onSelectPet(pet);
                     }}
-                    className="w-full py-2.5 sm:py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-1.5 active:scale-95 cursor-pointer"
+                    className="w-full py-2 sm:py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-[11px] sm:text-xs shadow-xs transition-colors flex items-center justify-center gap-1 sm:gap-1.5 active:scale-95 cursor-pointer"
                   >
-                    <span>Meet & Adopt {pet.name}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Adopt {pet.name}</span>
+                    <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   </button>
                 </div>
 
