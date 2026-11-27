@@ -116,13 +116,13 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 p-6 sm:p-10 lg:p-16 z-10 relative">
+            <div className="lg:col-span-6 p-6 sm:p-10 lg:p-14 xl:p-16 z-10 relative">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
                 <Heart className="w-3.5 h-3.5 fill-current" />
                 <span>Real Adoptions • Real Love</span>
               </div>
               
-              <h1 className="text-2xl sm:text-4xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
+              <h1 className="text-2xl sm:text-4xl lg:text-[3.15rem] font-black text-[#111827] tracking-tight leading-[1.15]">
                 Heartwarming Stories From Rescued to Loved.
               </h1>
               
@@ -147,21 +147,19 @@ export default function StoriesPage({ onOpenStory, onNavigate }) {
               </div>
             </div>
 
-            {/* Right Column: Blended Happy Family Image */}
-            <div className="lg:col-span-5 relative h-64 sm:h-80 lg:h-full min-h-[260px] sm:min-h-[360px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
-              {/* Left blend gradient */}
-              <div className="absolute inset-y-0 left-0 w-24 sm:w-36 z-10 pointer-events-none hidden lg:block bg-gradient-to-r from-white via-white/80 to-transparent" />
-              {/* Top fade for mobile */}
-              <div className="absolute inset-x-0 top-0 h-16 z-10 pointer-events-none lg:hidden bg-gradient-to-b from-white to-transparent" />
+            {/* Right Column: Vivid Family Image with Clean Left Visibility */}
+            <div className="lg:col-span-6 relative h-72 sm:h-96 lg:h-full min-h-[300px] sm:min-h-[400px] lg:min-h-[460px] overflow-hidden flex items-center justify-center">
+              {/* Very subtle edge touch to soften boundary */}
+              <div className="absolute inset-y-0 left-0 w-8 sm:w-12 z-10 pointer-events-none hidden lg:block bg-gradient-to-r from-white/40 to-transparent" />
 
               <img
                 src="/images/stories_hero_banner.jpg"
                 onError={(e) => { e.currentTarget.src = "/images/journey_friends_top.jpg"; }}
                 alt="Happy Family with Rescued Companion"
-                className="w-full h-full object-cover object-center lg:object-right group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 style={{
-                  maskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 95%, transparent 100%)',
-                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 95%, transparent 100%)'
+                  maskImage: 'linear-gradient(to right, transparent 0%, black 4%, black 98%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 4%, black 98%, transparent 100%)'
                 }}
               />
 
