@@ -71,38 +71,72 @@ export default function AboutPage({ onOpenAdopt, onNavigate }) {
     <div className="py-8 sm:py-12">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 space-y-16 sm:space-y-24">
         
-        {/* Hero Banner */}
-        <div className="relative rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-brand-50 via-white to-purple-50/40 p-8 sm:p-14 lg:p-20 border-2 border-brand-200/80 shadow-soft overflow-hidden">
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-brand-200/40 blur-3xl pointer-events-none" />
-          <div className="relative z-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-5">
-              <Heart className="w-3.5 h-3.5 fill-current" />
-              <span>Our Compassionate Mission</span>
-            </div>
+        {/* Hero Banner with Blended Visual Stage */}
+        <div className="relative rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-brand-50 via-white to-purple-50/40 border-2 border-brand-200/80 shadow-soft overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center min-h-[380px] lg:min-h-[440px]">
             
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#111827] tracking-tight leading-[1.15]">
-              Every Rescued Pet Deserves A Safe, Loving Home.
-            </h1>
-            
-            <p className="mt-6 text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
-              HappyPaws is a modern animal welfare and adoption platform bridging certified non-profit shelters, passionate rescue advocates, and prospective pet parents through ethical veterinary care and smart matching.
-            </p>
+            {/* Left Column: Heading & Content */}
+            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 relative z-10">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-5">
+                <Heart className="w-3.5 h-3.5 fill-current" />
+                <span>Our Compassionate Mission</span>
+              </div>
+              
+              <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
+                Every Rescued Pet Deserves A Safe, Loving Home.
+              </h1>
+              
+              <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed font-normal max-w-xl">
+                HappyPaws is a modern animal welfare and adoption platform bridging certified non-profit shelters, passionate rescue advocates, and prospective pet parents through ethical veterinary care and smart matching.
+              </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button
-                onClick={onOpenAdopt}
-                className="px-7 py-3.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md hover:shadow-brand-500/25 transition-all flex items-center gap-2 group active:scale-95"
-              >
-                <span>Browse Rescue Pets</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => onNavigate('services')}
-                className="px-7 py-3.5 rounded-2xl bg-white hover:bg-gray-50 text-gray-800 font-bold text-sm border-2 border-gray-200 hover:border-brand-300 transition-all active:scale-95"
-              >
-                Our Veterinary Clinic
-              </button>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <button
+                  onClick={onOpenAdopt}
+                  className="px-7 py-3.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md hover:shadow-brand-500/25 transition-all flex items-center gap-2 group active:scale-95 cursor-pointer"
+                >
+                  <span>Browse Rescue Pets</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button
+                  onClick={() => onNavigate('services')}
+                  className="px-7 py-3.5 rounded-2xl bg-white hover:bg-gray-50 text-gray-800 font-bold text-sm border-2 border-gray-200 hover:border-brand-300 transition-all active:scale-95 cursor-pointer"
+                >
+                  Our Veterinary Clinic
+                </button>
+              </div>
             </div>
+
+            {/* Right Column: Blended Image with Soft Gradient Mask */}
+            <div className="lg:col-span-5 relative h-72 sm:h-96 lg:h-full min-h-[320px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
+              {/* Seamless Left Fade Gradient (blends into the card's background) */}
+              <div className="absolute inset-y-0 left-0 w-24 sm:w-36 z-10 pointer-events-none hidden lg:block bg-gradient-to-r from-white via-white/80 to-transparent" />
+              {/* Top fade for mobile */}
+              <div className="absolute inset-x-0 top-0 h-16 z-10 pointer-events-none lg:hidden bg-gradient-to-b from-white to-transparent" />
+
+              <img
+                src="/images/about_hero_banner.jpg"
+                onError={(e) => { e.currentTarget.src = "/images/about_vet_care.jpg"; }}
+                alt="Compassionate Veterinary Care"
+                className="w-full h-full object-cover object-center lg:object-right group-hover:scale-105 transition-transform duration-700"
+                style={{
+                  maskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 95%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 95%, transparent 100%)'
+                }}
+              />
+
+              {/* Floating Quality Badge */}
+              <div className="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md border border-brand-200/80 rounded-2xl p-3 shadow-lg flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-brand-600 text-white flex items-center justify-center">
+                  <Heart className="w-4 h-4 fill-current" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900 leading-tight">100% Compassionate</p>
+                  <p className="text-[10px] text-brand-600 font-semibold">Verified Clinical Standard</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 

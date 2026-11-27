@@ -34,37 +34,67 @@ export default function ShopPage({ onAddToCart, onOpenCart, onNavigate }) {
     <div className="py-8 sm:py-12">
       <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 space-y-16 sm:space-y-24">
         
-        {/* Hero Banner */}
-        <div className="relative rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-pink-50/60 via-white to-brand-50/50 p-8 sm:p-14 lg:p-20 border-2 border-brand-200/80 shadow-soft overflow-hidden">
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-pink-200/40 blur-3xl pointer-events-none" />
-          <div className="relative z-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-5">
-              <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Veterinary Care Shop</span>
-            </div>
+        {/* Hero Banner with Blended Pet Supplies Image */}
+        <div className="relative rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-pink-50/60 via-white to-brand-50/50 border-2 border-brand-200/80 shadow-soft overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center min-h-[380px] lg:min-h-[440px]">
             
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#111827] tracking-tight leading-[1.15]">
-              Curated Nutrition & Clinical Pet Essentials.
-            </h1>
-            
-            <p className="mt-6 text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
-              100% vet-approved ingredients, cold-chain freshness, and essential healthcare supplies. Every item purchased directly funds shelter nutrition and medical treatments.
-            </p>
+            {/* Left Content */}
+            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 z-10 relative">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-5">
+                <ShoppingBag className="w-3.5 h-3.5" />
+                <span>Veterinary Care Shop</span>
+              </div>
+              
+              <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-black text-[#111827] tracking-tight leading-[1.15]">
+                Curated Nutrition & Clinical Pet Essentials.
+              </h1>
+              
+              <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed font-normal max-w-xl">
+                100% vet-approved ingredients, cold-chain freshness, and essential healthcare supplies. Every item purchased directly funds shelter nutrition and medical treatments.
+              </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-gray-700 font-semibold">
-              <div className="flex items-center gap-2">
-                <Truck className="w-4 h-4 text-emerald-500" />
-                <span>Free Express Shipping Over $45</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                <span>Guaranteed Fresh & Authentic</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <HeartHandshake className="w-4 h-4 text-emerald-500" />
-                <span>Portion Donated to Rescues</span>
+              <div className="mt-8 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-gray-700 font-semibold">
+                <div className="flex items-center gap-2">
+                  <Truck className="w-4 h-4 text-emerald-500" />
+                  <span>Free Express Shipping Over $45</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                  <span>Cold-Chain Guaranteed</span>
+                </div>
               </div>
             </div>
+
+            {/* Right Column: Blended Products Image */}
+            <div className="lg:col-span-5 relative h-72 sm:h-96 lg:h-full min-h-[320px] lg:min-h-[440px] overflow-hidden flex items-center justify-center">
+              {/* Left blend gradient */}
+              <div className="absolute inset-y-0 left-0 w-24 sm:w-36 z-10 pointer-events-none hidden lg:block bg-gradient-to-r from-white via-white/80 to-transparent" />
+              {/* Top fade for mobile */}
+              <div className="absolute inset-x-0 top-0 h-16 z-10 pointer-events-none lg:hidden bg-gradient-to-b from-white to-transparent" />
+
+              <img
+                src="/images/shop_hero_banner.jpg"
+                onError={(e) => { e.currentTarget.src = "/images/preview_shop.jpg"; }}
+                alt="Curated Pet Nutrition & Supplies"
+                className="w-full h-full object-cover object-center lg:object-right group-hover:scale-105 transition-transform duration-700"
+                style={{
+                  maskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 95%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 95%, transparent 100%)'
+                }}
+              />
+
+              {/* Floating Quality Badge */}
+              <div className="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md border border-brand-200/80 rounded-2xl p-3 shadow-lg flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-pink-500 text-white flex items-center justify-center">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-900 leading-tight">Vet-Approved Recipes</p>
+                  <p className="text-[10px] text-pink-600 font-semibold">100% Non-Toxic & Fresh</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
